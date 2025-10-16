@@ -5,17 +5,26 @@
 
 @theme {
   --font-poppins: "Poppins", sans-serif;
-  --color-shop_light_pink: #fcf0e4;
-  --color-shop_dark_green: #063c28;
-  --color-shop_btn_dark_green: #063d29;
-  --color-shop_light_bg: #f6f6f6;
-  --color-shop_light_green: #3b9c3c;
-  --color-shop_orange: #fb6c08;
-  --color-darkColor: #151515;
-  --color-lightColor: #52525b;
-  --color-lightOrange: #fca99b;
-  --color-shop_light_green: #3b9c3c;
-  --color-deal-bg: #f1f3f8;
+  /* Backgrounds & neutrals */
+  --color-shop_light_bg: #fefbea; /* very light yellow-tinted background */
+  --color-deal-bg: #fff9e5; /* soft creamy tone for cards/sections */
+
+  /* Main brand tones (yellow-gold family) */
+  --color-shop_primary: #fbbf24; /* main accent color (golden amber) */
+  --color-shop_orange: #f59e0b; /* complementary orange tone */
+  --color-lightOrange: #fcd34d; /* lighter variant for hover or highlights */
+
+  /* Contrasts (dark balance) */
+  --color-darkColor: #1a1a1a; /* near-black text color */
+  --color-lightColor: #4b5563; /* mid-gray for secondary text */
+
+  /* Accent colors — greens to balance the warmth */
+  --color-shop_dark_green: #065f46; /* deep earthy green for buttons */
+  --color-shop_btn_dark_green: #047857; /* slightly lighter button green */
+  --color-shop_light_green: #a3e635; /* bright lime tint for subtle highlights */
+
+  /* Light neutral variant (replaces pinkish hue) */
+  --color-shop_light_pink: #fff7e6;
 }
 
 @theme inline {
