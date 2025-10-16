@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/organism/Header";
 
 export const metadata: Metadata = {
   // Title configuration
@@ -19,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-poppins antialiased`}>{children}</body>
+      <body className={`font-poppins antialiased`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
