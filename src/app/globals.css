@@ -146,3 +146,15 @@
     cursor: pointer;
   }
 }
+
+@layer utilities {
+  .hover-effect {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
