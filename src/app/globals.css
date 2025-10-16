@@ -12,7 +12,7 @@
   /* Main brand tones (yellow-gold family) */
   --color-shop-primary: #fbbf24; /* main accent color (golden amber) */
   --color-shop-orange: #f59e0b; /* complementary orange tone */
-  --color-lightOrange: #fcd34d; /* lighter variant for hover or highlights */
+  --color-light-orange: #fcd34d; /* lighter variant for hover or highlights */
 
   /* Contrasts (dark balance) */
   --color-darkColor: #1a1a1a; /* near-black text color */
