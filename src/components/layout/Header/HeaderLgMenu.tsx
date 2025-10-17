@@ -1,9 +1,9 @@
 import CartIcon from "@/components/atoms/CartIcon";
 import FavIcon from "@/components/atoms/FavIcon";
 import SignIn from "@/components/atoms/SignIn";
-import { SearchIcon } from "lucide-react";
 import React from "react";
 import HeaderNav from "./HeaderNav";
+import SearchIcon from "@/components/atoms/SearchIcon";
 
 const HeaderLgMenu = () => {
   return (
