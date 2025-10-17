@@ -1,15 +1,17 @@
 import React from "react";
 import Container from "../../common/Container";
 import Logo from "../../atoms/Logo";
-import HeaderMenu from "./HeaderMenu";
+
+import MobileMenu from "./MobileMenu";
+import HeaderLgMenu from "./HeaderLgMenu";
 
 const Header = () => {
   return (
     <header className="bg-white py-5">
       <Container className="flex-between">
         <Logo />
-        <HeaderMenu />
-        <div>Last thing </div>
+        <HeaderLgMenu />
+        <MobileMenu />
       </Container>
     </header>
   );
