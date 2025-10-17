@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/layout/Header";
+import Header from "@/components/layout/Header/Header";
 
 export const metadata: Metadata = {
   // Title configuration
