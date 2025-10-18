@@ -4,6 +4,7 @@ import HeaderNav from "./Header/HeaderNav";
 
 import { X } from "lucide-react";
 import IconLinks from "./Header/IconLinks";
+import SocialLinks from "../ui/customUI/SocialLinks";
 
 type SideBarProps = {
   isOpen: boolean;
@@ -23,8 +24,10 @@ const SideBar = ({ isOpen, onClose }: SideBarProps) => {
             <X className="text-white w-6 h-6 sm:w-8 sm:h-8" />
           </button>
         </div>
+
         <HeaderNav isOpened={isOpen} />
         <IconLinks isOpen={isOpen} />
+        <SocialLinks />
       </div>
     </div>
   );
