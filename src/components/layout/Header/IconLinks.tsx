@@ -1,10 +1,13 @@
+"use client";
 import CartIcon from "@/components/atoms/CartIcon";
 import FavIcon from "@/components/atoms/FavIcon";
 import SearchIcon from "@/components/atoms/SearchIcon";
 import SignIn from "@/components/atoms/SignIn";
+import { ClerkLoaded, SignedIn, UserButton, useUser } from "@clerk/nextjs";
 import React from "react";
 
 const IconLinks = ({ isOpen }: { isOpen?: boolean }) => {
+  const user = useUser();
   return (
     <div
       className={`${
@@ -15,7 +18,12 @@ const IconLinks = ({ isOpen }: { isOpen?: boolean }) => {
       <SearchIcon />
       <CartIcon />
       <FavIcon />
-      <SignIn />
+      <ClerkLoaded>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        {!user.user && <SignIn />}
+      </ClerkLoaded>
     </div>
   );
 };

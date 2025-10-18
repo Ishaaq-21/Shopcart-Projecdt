@@ -4,10 +4,10 @@ import React from "react";
 
 const Logo = ({ className }: { className?: string }) => {
   return (
-    <Link href={"/"}>
+    <Link href={"/"} className="w-auto md:w-1/3">
       <h2
         className={cn(
-          "text-2xl text-amber-600 tracking-wider hover:text-shop-orange font-black w-fit group hover-effect",
+          "text-2xl text-amber-600 tracking-wider hover:text-shop-orange font-black w-fit group hover-effect ",
           className
         )}
       >
