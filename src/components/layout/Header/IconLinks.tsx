@@ -12,7 +12,7 @@ const IconLinks = ({ isOpen }: { isOpen?: boolean }) => {
     <div
       className={`${
         isOpen ? "flex flex-col my-5" : "hidden"
-      } md:flex md:flex-row gap-5 md:justify-between md:items-center
+      } md:flex md:flex-row gap-5 md:justify-end md:items-center w-auto md:w-1/3
       `}
     >
       <SearchIcon />
