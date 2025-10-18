@@ -17,10 +17,6 @@ export const headerMenuData: HeaderMenuItemType[] = [
     href: "/blog",
   },
   {
-    title: "Contact",
-    href: "/contact",
-  },
-  {
     title: "Hot Deal",
     href: "/deal",
   },
