@@ -8,9 +8,8 @@ const IconLinks = ({ isOpen }: { isOpen?: boolean }) => {
   return (
     <div
       className={`${
-        isOpen ? "flex flex-col mt-5" : "hidden"
-      } md:flex md:flex-row 
-        gap-5 md:justify-between md:items-center
+        isOpen ? "flex flex-col my-5" : "hidden"
+      } md:flex md:flex-row gap-5 md:justify-between md:items-center
       `}
     >
       <SearchIcon />
