@@ -19,7 +19,9 @@ const SideBar = ({ isOpen, onClose }: SideBarProps) => {
       <div className="h-full w-3/4 bg-black p-7">
         <div className="side-bar-header flex-between mb-7">
           <Logo className="text-shop-light-bg text-xl sm:text-2xl" />
-          <X onClick={onClose} className="text-white w-6 h-6 sm:w-8 sm:h-8" />
+          <button onClick={onClose}>
+            <X className="text-white w-6 h-6 sm:w-8 sm:h-8" />
+          </button>
         </div>
         <HeaderNav isOpened={isOpen} />
         <IconLinks isOpen={isOpen} />
