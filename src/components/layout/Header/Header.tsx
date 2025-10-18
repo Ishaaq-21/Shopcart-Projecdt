@@ -2,8 +2,8 @@ import React from "react";
 import Container from "../../common/Container";
 import Logo from "../../atoms/Logo";
 
-import MobileMenu from "./MobileMenu";
 import HeaderLgMenu from "./HeaderLgMenu";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   return (
