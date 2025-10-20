@@ -4,7 +4,8 @@ import React from "react";
 const FooterBottom = () => {
   return (
     <p className="w-fit flex items-center gap-x-1.5 mx-auto py-5 text-sm md:text-base text-nowrap font-normal">
-      © 2025 <Logo className="!text-sm md:!text-base" /> All rights reserved.
+      © {new Date().getFullYear()} <Logo className="!text-sm md:!text-base" />{" "}
+      All rights reserved.
     </p>
   );
 };
