@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header/Header";
 import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "@/components/layout/Footer/Footer";
 export const metadata: Metadata = {
   // Title configuration
   title: {
@@ -24,6 +25,7 @@ export default function RootLayout({
         <body className={`font-poppins antialiased`}>
           <Header />
           {children}
+          <Footer />
         </body>
       </html>
     </ClerkProvider>
