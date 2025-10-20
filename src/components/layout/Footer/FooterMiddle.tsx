@@ -12,7 +12,7 @@ import React from "react";
 
 const FooterMiddle = () => {
   return (
-    <div className="flex flex-col gap-y-5 md:gap-y-10  md:flex-row md:flex-wrap justify-between items-start py-8 border-b border-b-black/70">
+    <div className="flex flex-col gap-y-5 md:gap-y-10  md:flex-row md:flex-wrap justify-between items-start py-8 border-b border-b-black/20">
       <div className="footer-mid-div space-y-5">
         <Logo />
         <p className="text-black/70 mt-3 max-w-72 ">

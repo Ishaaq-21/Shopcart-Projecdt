@@ -40,7 +40,7 @@ const ContactsArr: ContactItemData[] = [
 
 const FooterTop = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 place-items-start  md:place-items-center gap-y-5 gap-x-2 border-black/50 border-b py-5">
+    <div className="grid grid-cols-2 md:grid-cols-4 place-items-start  md:place-items-center gap-y-5 gap-x-2 border-black/20 border-b py-5">
       {ContactsArr.map((item, index) => (
         <div
           key={index}

@@ -6,7 +6,7 @@ import FooterBottom from "./FooterBottom";
 
 const Footer = () => {
   return (
-    <footer className="border-t  border-black/50">
+    <footer className="border-t  border-black/20">
       <Container>
         <FooterTop />
         <FooterMiddle />
