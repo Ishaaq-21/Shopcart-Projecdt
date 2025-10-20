@@ -4,7 +4,7 @@ import React from "react";
 
 const HomeBanner = () => {
   return (
-    <div className="bg-shop-light-bg flex justify-center md:justify-between items-center px-20 py-16 relative gap-10">
+    <div className="bg-shop-light-bg flex justify-center md:justify-between items-center px-20 py-16 relative gap-10 rounded-md">
       <div className="text w-full md:w-96 text-center md:text-left ">
         <h2 className="text-3xl text-shop-dark-green font-bold mb-5 tracking-wider">
           Grab up to 50% Off On Selected Headphones
