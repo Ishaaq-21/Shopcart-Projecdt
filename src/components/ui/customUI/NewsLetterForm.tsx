@@ -12,6 +12,7 @@ const NewsLetterForm = () => {
         type="email"
         name="email"
         id="email"
+        required
         className="p-2 pl-3 placeholder:text-black/60 border rounded-md border-black/70 w-full "
       />
       <Button type="submit" className="block w-full mt-5">
