@@ -27,7 +27,7 @@ const SocialLinksArr: SocialLink[] = [
   },
 ];
 
-const SocialLinks = () => {
+const SocialLinks = ({ className }: { className?: string }) => {
   return (
     <ul className="flex gap-5 ">
       {SocialLinksArr.map((linkItem: SocialLink) => (
@@ -37,7 +37,7 @@ const SocialLinks = () => {
               href={linkItem.href}
               rel="noopener noreferrer"
               target="_blank"
-              className="p-2 rounded-full border text-white/70 md:text-black hover:text-white hover:border-shop-primary hover-effect "
+              className={`p-2 rounded-full border text-white/70  hover:text-white hover:border-shop-primary hover-effect ${className}`}
             >
               {linkItem.icon}
             </Link>
