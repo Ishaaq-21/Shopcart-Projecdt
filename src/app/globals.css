@@ -150,6 +150,12 @@
   .header-icon-span {
     @apply absolute w-3.5 h-3.5 -top-1 -right-1  flex justify-center items-center text-xs bg-shop-orange text-white rounded-full font-semibold;
   }
+  .footer-mid-div {
+    @apply w-full md:w-1/2 lg:w-1/4  md:border-none;
+  }
+  .footer-mid-div:not(:last-child) {
+    @apply border-b border-black/40 pb-5 md:pb-0;
+  }
 }
 @layer utilities {
   .hover-effect {
