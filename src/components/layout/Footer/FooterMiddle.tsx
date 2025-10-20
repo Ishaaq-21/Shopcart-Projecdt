@@ -13,7 +13,7 @@ import React from "react";
 const FooterMiddle = () => {
   return (
     <div className="flex flex-col gap-y-5 md:gap-y-10  md:flex-row md:flex-wrap justify-between items-start py-8 border-b border-b-black/70">
-      <div className="footer-btm-div space-y-5">
+      <div className="footer-mid-div space-y-5">
         <Logo />
         <p className="text-black/70 mt-3 max-w-72 ">
           {" "}
@@ -23,7 +23,7 @@ const FooterMiddle = () => {
         <SocialLinks className="hover:!text-shop-primary !text-black/70 border-black/70" />
       </div>
       {/* Quick Links */}
-      <div className="footer-btm-div">
+      <div className="footer-mid-div">
         <h3 className="text-lg font-bold mb-3">Quick Links</h3>
         <div className="flex flex-col gap-2">
           {quickLinksData.map((item: QuickLink) => (
@@ -38,7 +38,7 @@ const FooterMiddle = () => {
         </div>
       </div>
       {/* Categories */}
-      <div className="footer-btm-div">
+      <div className="footer-mid-div">
         <h3 className="text-lg font-bold mb-3">Categories</h3>
         <div className="flex flex-col gap-2">
           {categoriesData.map((item: Category) => (
@@ -53,7 +53,7 @@ const FooterMiddle = () => {
         </div>
       </div>
       {/* News Letter */}
-      <div className="footer-btm-div">
+      <div className="footer-mid-div">
         <h3 className="text-lg font-bold ">News Letter</h3>
         <p className="text-black/70 max-w-72 my-3">
           {" "}
