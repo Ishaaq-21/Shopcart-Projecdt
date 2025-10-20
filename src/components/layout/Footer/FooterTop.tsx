@@ -40,9 +40,12 @@ const ContactsArr: ContactItemData[] = [
 
 const FooterTop = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 place-items-start  md:place-items-center gap-y-5 gap-x-2">
+    <div className="grid grid-cols-2 md:grid-cols-4 place-items-start  md:place-items-center gap-y-5 gap-x-2 border-black/50 border-b py-5">
       {ContactsArr.map((item, index) => (
-        <div key={index} className="flex items-center gap-4 group">
+        <div
+          key={index}
+          className="flex items-center gap-4 group w-full hover:bg-gray-50 p-1 md:p-3 hover-effect"
+        >
           <p>{item.icon}</p>
           <div>
             <p className="text-black/70 group-hover:text-primary transition-colors mb-1 font-bold group-hover">
