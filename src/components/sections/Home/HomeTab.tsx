@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { productType } from "@/constants/data";
 import Link from "next/link";
 import React from "react";
-
-const HomeTabs = ["Gadget", "Appliances", "Refrigerators", "Others"];
 
 const HomeTab = ({
   selectedTab,
@@ -14,13 +13,13 @@ const HomeTab = ({
   return (
     <div className="flex flex-wrap justify-between items-center p-5 gap-y-5">
       <ul className="flex justify-start md:justify-between flex-wrap items-center gap-5">
-        {HomeTabs.map((tab) => (
+        {productType.map((item) => (
           <Button
-            onClick={() => setSelectedTab(tab)}
-            key={tab}
-            className={`text-black font-semibold px-5 py-3 rounded-2xl hover:bg-shop-primary border border-shop-primary hover-effect ${selectedTab === tab ? "bg-shop-primary" : "bg-shop-light-bg"}`}
+            onClick={() => setSelectedTab(item.title)}
+            key={item.title}
+            className={`text-black font-semibold px-5 py-3 rounded-2xl hover:bg-shop-primary border border-shop-primary hover-effect ${selectedTab === item.title ? "bg-shop-primary" : "bg-shop-light-bg"}`}
           >
-            {tab}
+            {item.title}
           </Button>
         ))}
       </ul>
