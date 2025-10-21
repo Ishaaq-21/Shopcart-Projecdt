@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 const HomeTabs = ["Gadget", "Appliances", "Refrigerators", "Others"];
@@ -23,12 +24,12 @@ const HomeTab = ({
           </Button>
         ))}
       </ul>
-      <Button
-        onClick={() => setSelectedTab("all")}
-        className="text-black font-semibold px-4 py-2 rounded-2xl bg-shop-light-bg  hover:bg-shop-primary border border-shop-primary hover-effect"
+      <Link
+        href="/shop"
+        className="text-black font-semibold px-4 py-2 rounded-4xl text-sm bg-shop-light-bg  hover:bg-shop-primary border border-shop-primary hover-effect"
       >
         See All
-      </Button>
+      </Link>
     </div>
   );
 };
