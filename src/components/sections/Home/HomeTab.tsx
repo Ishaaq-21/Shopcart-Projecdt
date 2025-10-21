@@ -12,8 +12,8 @@ const HomeTab = ({
   setSelectedTab: (tab: string) => void;
 }) => {
   return (
-    <div className="flex justify-between items-center p-5">
-      <ul className="flex justify-between items-center gap-5">
+    <div className="flex flex-wrap justify-between items-center p-5 gap-y-5">
+      <ul className="flex justify-start md:justify-between flex-wrap items-center gap-5">
         {HomeTabs.map((tab) => (
           <Button
             onClick={() => setSelectedTab(tab)}
