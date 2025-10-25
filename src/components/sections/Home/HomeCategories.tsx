@@ -36,7 +36,9 @@ const HomeCategories = async () => {
               <h3 className="text-lg font-semibold mb-2 text-white">
                 {category.title}
               </h3>
-              <p className="text-sm text-white/80">(1) items available</p>
+              <p className="text-sm text-white/80">
+                ({category.productCount}) items available
+              </p>
             </div>
           </div>
         ))}
