@@ -6,6 +6,7 @@ import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
 import AddToWishlistBtn from "@/components/atoms/AddToWishlistBtn";
 import AddToCartBtn from "@/components/atoms/AddToCartBtn";
+import StartsReview from "@/components/atoms/StartsReview";
 
 const StatusIcon = ({
   productStatus,
@@ -21,7 +22,13 @@ const StatusIcon = ({
   );
 };
 
-const ProductCard = ({ product }: { product: Product }) => {
+const ProductCard = ({
+  product,
+  index,
+}: {
+  product: Product;
+  index: number;
+}) => {
   console.log(product); // this is returing an object that has images and they do exist
 
   return (
@@ -43,13 +50,15 @@ const ProductCard = ({ product }: { product: Product }) => {
           />
         </Link>
       )}
-      <div className="infos my-2 p-4 min-h-48 flex flex-col justify-between">
+      <div className="infos my-2 p-4 min-h-48 flex flex-col justify-between gap-2">
         {product.categories && (
           <p className="text-gray-500/80 text-[10px] uppercase font-semibold">
             {product.categories.join(", ")}
           </p>
         )}
         <h3 className="font-semibold text-sm ">{product.name}</h3>
+
+        <StartsReview productIndex={index} />
 
         <p className="text-sm ">
           In Stock :{" "}
