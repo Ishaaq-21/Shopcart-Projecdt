@@ -41,8 +41,8 @@ const ProductGrid = () => {
         <NoProductAvailable selectedTab={selectedTab} />
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 py-10">
-          {products.map((product: Product) => (
-            <ProductCard key={product?._id} product={product} />
+          {products.map((product: Product, index) => (
+            <ProductCard key={product?._id} product={product} index={index} />
           ))}
         </div>
       )}
