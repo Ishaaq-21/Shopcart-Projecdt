@@ -22,7 +22,7 @@ export default function ShopLayout({
   return (
     <ClerkProvider>
       <Header />
-      {children}
+      <main className="mb-20 pt-[70px]">{children}</main>
       <Footer />
     </ClerkProvider>
   );
