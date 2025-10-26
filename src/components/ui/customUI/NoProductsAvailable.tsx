@@ -6,9 +6,11 @@ import { Loader2 } from "lucide-react";
 
 const NoProductAvailable = ({
   selectedTab,
+  message,
   className,
 }: {
   selectedTab?: string;
+  message?: string;
   className?: string;
 }) => {
   return (
@@ -24,7 +26,7 @@ const NoProductAvailable = ({
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-2xl font-bold text-gray-800">
-          No Products Available
+          No {message ? message : "products"} Available
         </h2>
       </motion.div>
 
@@ -34,7 +36,8 @@ const NoProductAvailable = ({
         transition={{ delay: 0.2, duration: 0.5 }}
         className="text-gray-600"
       >
-        We&apos;re sorry, but there are no products matching on{" "}
+        We&apos;re sorry, but there are no {message ? message : "products"}{" "}
+        matching on{" "}
         <span className="text-base font-semibold text-darkColor">
           {selectedTab}
         </span>{" "}
