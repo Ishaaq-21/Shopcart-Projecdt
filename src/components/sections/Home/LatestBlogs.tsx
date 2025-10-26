@@ -5,7 +5,7 @@ import { Blog } from "../../../../sanity.types";
 import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
-
+import dayjs from "dayjs";
 const LatestBlogs = async () => {
   const blogs = await getLatestBlogs();
   console.log("blooooooooogs", blogs);
@@ -21,7 +21,7 @@ const LatestBlogs = async () => {
               className="overflow-hidden rounded-lg bg-gray-100 border hover:border-black hover-effect"
             >
               {blog.mainImage && (
-                <div className="w-full h-32 relative">
+                <div className="w-full h-36 relative">
                   <Image
                     src={urlFor(blog.mainImage).url()}
                     alt={`${blog.title}'s picture`}
@@ -31,17 +31,21 @@ const LatestBlogs = async () => {
               )}
               <div className="p-5">
                 <div className="flex justify-between items-center">
-                  <Link
-                    href={"/"}
-                    className="pb-1 border-b-2 border-black/20 hover:border-shop-orange text-xs font-semibold text-shop-orange  hover-effect tracking-wider"
-                  >
-                    Company news
-                  </Link>
+                  {blog.blogcategories?.map((item) => {
+                    return (
+                      <p
+                        key={item._key}
+                        className="pb-1 border-b-2 border-black/20 hover:border-shop-orange text-xs font-semibold text-shop-orange  hover-effect tracking-wider"
+                      >
+                        {item?.title}
+                      </p>
+                    );
+                  })}
                   <p className="pb-1 border-b-2 border-black/20 hover:border-shop-orange text-xs text-black/50 hover:text-shop-orange hover-effect tracking-wider">
-                    11/20/25
+                    {dayjs(blog.publishedAt).format("MMMM D, YYYY")}
                   </p>
                 </div>
-                <h3 className="text-g mt-4 font-semibold tracking-wider">
+                <h3 className="text-g mt-3 font-semibold tracking-wider">
                   {blog.title}
                 </h3>
               </div>
