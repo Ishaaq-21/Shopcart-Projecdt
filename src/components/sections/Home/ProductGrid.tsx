@@ -23,7 +23,6 @@ const ProductGrid = () => {
         setIsLoading(true);
         const productsData = await client.fetch(query, params);
         setProducts(productsData);
-        console.log(productsData);
       } catch (error) {
         console.error("Error", error);
       } finally {

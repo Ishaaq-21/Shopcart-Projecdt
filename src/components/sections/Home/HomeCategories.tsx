@@ -8,7 +8,6 @@ import Link from "next/link";
 
 const HomeCategories = async () => {
   const categories = await getCategories(6);
-  console.log("cats ", categories);
   return (
     <div className="w-full border rounded-md px-7 pt-7 pb-5">
       <Title className="pb-3 border-b border-black/15">
