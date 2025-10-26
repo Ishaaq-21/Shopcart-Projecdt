@@ -102,6 +102,7 @@ export type Blog = {
     _type: "image";
   };
   blogcategories?: Array<{
+    title: string;
     _ref: string;
     _type: "reference";
     _weak?: boolean;
