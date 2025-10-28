@@ -23,16 +23,20 @@ const StatusIcon = ({
 };
 
 const ProductCard = ({
+  className,
   product,
   index,
 }: {
+  className?: string;
   product: Product;
   index: number;
 }) => {
   console.log(product); // this is returing an object that has images and they do exist
 
   return (
-    <div className="relative rounded-lg border border-black/30 group min-h-80 overflow-hidden">
+    <div
+      className={`relative rounded-lg border border-black/30 group min-h-80 overflow-hidden ${className}`}
+    >
       <div className="flex justify-between items-center p-2 absolute w-full z-10">
         <StatusIcon productStatus={product.status} />
         <AddToWishlistBtn product={product} />
