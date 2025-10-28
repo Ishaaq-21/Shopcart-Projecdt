@@ -35,7 +35,7 @@ const LatestBlogs = async () => {
                   {blog.blogcategories?.map((item) => {
                     return (
                       <p
-                        key={item._key}
+                        key={item.title}
                         className="pb-1 border-b-2 border-black/20 hover:border-shop-orange text-xs font-semibold text-shop-orange  hover-effect tracking-wider"
                       >
                         {item?.title}
