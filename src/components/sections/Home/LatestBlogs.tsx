@@ -42,7 +42,8 @@ const LatestBlogs = async () => {
                       </p>
                     );
                   })}
-                  <p className="pb-1 border-b-2 border-black/20 hover:border-shop-orange text-xs text-black/50 hover:text-shop-orange hover-effect tracking-wider">
+                  <p className="flex items-center pb-1 border-b-2 border-black/20 hover:border-shop-orange text-[10px] text-black/50 hover:text-shop-orange hover-effect tracking-wider">
+                    <Calendar className="mr-1" size={15} />
                     {dayjs(blog.publishedAt).format("MMMM D, YYYY")}
                   </p>
                 </div>
