@@ -6,13 +6,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import dayjs from "dayjs";
+import { Calendar } from "lucide-react";
+
 const LatestBlogs = async () => {
   const blogs = await getLatestBlogs();
-  console.log("blooooooooogs", blogs);
   return (
     <div className="w-full border rounded-md px-7 pt-7 pb-5 my-10">
       <Title>Latest Blogs</Title>
-      <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-5">
         {blogs.map((blog: Blog) => {
           return (
             <Link
