@@ -1,3 +1,5 @@
+import "./globals.css";
+
 const RootLayout = ({
   children,
 }: Readonly<{
@@ -5,7 +7,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className={`font-poppins antialiased`}>{children}</body>
+      <body className={`font-poppins antialiased h-screen`}>{children}</body>
     </html>
   );
 };
