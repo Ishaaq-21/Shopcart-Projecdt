@@ -6,9 +6,11 @@ import { Heart } from "lucide-react";
 const AddToWishlistBtn = ({
   product,
   className,
+  iconSize,
 }: {
   product: Product;
   className?: string;
+  iconSize?: number;
 }) => {
   return (
     <div className={cn("z-10", className)}>
