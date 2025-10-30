@@ -1,5 +1,6 @@
 import { sanityFetch } from "../lib/live";
 import {
+  BRAND_QUERY,
   BRANDS_QUERY,
   DEAL_PRODUCTS,
   LATEST_BLOG_QUERY,
