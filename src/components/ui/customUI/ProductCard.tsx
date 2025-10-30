@@ -31,8 +31,6 @@ const ProductCard = ({
   product: Product;
   index: number;
 }) => {
-  console.log(product); // this is returing an object that has images and they do exist
-
   return (
     <div
       className={`relative rounded-lg border border-black/30 group min-h-80 overflow-hidden ${className}`}
@@ -77,7 +75,7 @@ const ProductCard = ({
             {product.price ? (product.price * 1.15).toFixed(2) : ""}
           </del>
         </p>
-        <AddToCartBtn />
+        <AddToCartBtn product={product} />
       </div>
     </div>
   );
