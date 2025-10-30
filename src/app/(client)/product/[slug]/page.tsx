@@ -2,13 +2,40 @@ import Container from "@/components/common/Container";
 import { urlFor } from "@/sanity/lib/image";
 import { getProductBySlug } from "@/sanity/queries";
 import Image from "next/image";
-import React from "react";
+import React, { ReactNode } from "react";
 import { Product } from "../../../../../sanity.types";
 import Title from "@/components/atoms/Title";
 import StartsReview from "@/components/atoms/StartsReview";
 import AddToCartBtn from "@/components/atoms/AddToCartBtn";
 import AddToWishlistBtn from "@/components/atoms/AddToWishlistBtn";
 import ProductChars from "@/components/ui/customUI/ProductChars";
+import {
+  CircleQuestionMark,
+  Share2,
+  SkipBack,
+  Square,
+  StepBack,
+  Truck,
+} from "lucide-react";
+
+const subInfo: { icon: ReactNode; info: string }[] = [
+  {
+    icon: <Square size={25} />,
+    info: "Compare Color",
+  },
+  {
+    icon: <CircleQuestionMark size={25} />,
+    info: "Ask a question",
+  },
+  {
+    icon: <Truck size={25} />,
+    info: "Delivery & Return",
+  },
+  {
+    icon: <Share2 size={25} />,
+    info: "Share",
+  },
+];
 
 const ProductPage = async ({
   params,
@@ -77,6 +104,7 @@ const ProductPage = async ({
                 />
               </div>
 
+              {/* Product Characteristics */}
               <ProductChars product={product} />
             </div>
           </div>
