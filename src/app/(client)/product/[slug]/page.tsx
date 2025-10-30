@@ -52,7 +52,7 @@ const ProductPage = async ({
         {product && (
           <div className="flex flex-col md:flex-row items-center gap-10 w-full">
             {product.images && (
-              <div className="image relative w-full sm:w-3/4 md:w-full flex-2 min-h-96 border border-black/20 rounded-lg ">
+              <div className="image relative w-full sm:w-3/4 md:w-full flex-2 min-h-96 border border-black/20 rounded-lg md:self-start">
                 <Image
                   src={urlFor(product.images[0]).url()}
                   alt={`${product.name} image`}
