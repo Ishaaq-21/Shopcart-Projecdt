@@ -13,9 +13,11 @@ const AddToWishlistBtn = ({
   iconSize?: number;
 }) => {
   return (
-    <div className={cn("z-10", className)}>
-      <button className="p-2 border rounded-full hover:bg-shop-orange hover-effect">
-        <Heart size={12} />
+    <div className={cn("z-10")}>
+      <button
+        className={`p-2 border rounded-full hover:bg-shop-orange hover-effect ${className}`}
+      >
+        <Heart size={(iconSize && iconSize) || 12} />
       </button>
     </div>
   );
