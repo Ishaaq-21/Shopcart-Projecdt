@@ -106,6 +106,40 @@ const ProductPage = async ({
 
               {/* Product Characteristics */}
               <ProductChars product={product} />
+
+              {/* Sub Infos */}
+              <div className="border-b border-black/10 py-6 flex-between gap-5 items-center">
+                {subInfo.map((info) => (
+                  <div key={info.info} className="flex gap-2">
+                    {info.icon}
+                    <span className="text-gray-500 text font-semibold">
+                      {info.info}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="border border-black/20  gap-5 ">
+                <div className="flex items-center gap-5 border-b border-black/20 p-5">
+                  <Truck size={35} color="#f59e0b" />
+                  <div>
+                    <h3 className="font-semibold">Free Delivery</h3>
+                    <p className="text-gray-500 underline ">
+                      Enter your Postal code for Delivey Availability.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-5  p-5">
+                  <SkipBack size={35} color="#f59e0b" />
+                  <div>
+                    <h3 className="font-semibold">Return Delivery</h3>
+                    <p className="text-gray-500">
+                      Free 30days Delivery Returns.{" "}
+                      <span className="underline">Details</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}
