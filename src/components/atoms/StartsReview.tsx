@@ -1,7 +1,13 @@
 import { StarIcon } from "lucide-react";
 import React from "react";
 
-const StartsReview = ({ productIndex }: { productIndex: number }) => {
+const StartsReview = ({
+  productIndex,
+  fillAll,
+}: {
+  productIndex?: number;
+  fillAll?: boolean;
+}) => {
   return (
     <div className="flex item-center gap-2">
       <div className="start flex items-center">
@@ -10,11 +16,13 @@ const StartsReview = ({ productIndex }: { productIndex: number }) => {
             key={index}
             className={`w-4 h-4 text-shop-primary`}
             fill={
-              productIndex % 2 === 0
+              fillAll
                 ? "#fbbf24"
-                : index < 4
+                : productIndex !== undefined && productIndex % 2 === 0
                   ? "#fbbf24"
-                  : "#fff"
+                  : index < 4
+                    ? "#fbbf24"
+                    : "#fff"
             }
           />
         ))}
