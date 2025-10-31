@@ -62,7 +62,7 @@ const ProductPage = async ({
             )}
 
             {/* Title and description */}
-            <div className="text-info flex-3">
+            <div className="text-info flex-3 w-full">
               <div className="border-b border-black/10 pb-6">
                 <Title>{product.name}</Title>
                 <p className="text-gray-500 my-3 text-sm font-semibold tracking-wider">
