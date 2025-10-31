@@ -17,6 +17,8 @@ import {
   StepBack,
   Truck,
 } from "lucide-react";
+import Tabs from "@/components/ui/customUI/ProductTabs";
+import ProductTabs from "@/components/ui/customUI/ProductTabs";
 
 const subInfo: { icon: ReactNode; info: string }[] = [
   {
@@ -143,6 +145,7 @@ const ProductPage = async ({
             </div>
           </div>
         )}
+        <ProductTabs />
       </Container>
     </div>
   );
