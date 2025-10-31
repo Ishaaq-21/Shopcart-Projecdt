@@ -47,7 +47,6 @@ const ProductPage = async ({
   const { slug } = await params;
 
   const product: Product = await getProductBySlug(slug);
-  console.log(product);
   return (
     <div className="py-10">
       <Container className="">
