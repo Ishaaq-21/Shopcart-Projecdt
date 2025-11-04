@@ -12,7 +12,7 @@ const prices = [
 ];
 const ShopAside = ({ categories, brands }: shopProps) => {
   return (
-    <aside className="max-w-60 px-3 border border-black/40 rounded-lg">
+    <aside className="max-w-60 px-3 border-r border-shop-primary pt-5">
       <div className="categories py-3 mb-2">
         <h3 className="font-semibold text-lg pb-1 mb-2 border-b text-shop-orange tracking-widest">
           Categories
