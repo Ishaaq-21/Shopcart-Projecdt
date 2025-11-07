@@ -1,7 +1,7 @@
-import React from "react";
-import { shopProps } from "./shop";
-import { Category } from "@/constants/data";
-import { Brand } from "../../../../sanity.types";
+import React, { Dispatch, SetStateAction } from "react";
+import { Brand, Category } from "../../../../sanity.types";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import CategoriesList from "./CategoriesList";
 
 const prices = [
   "Under $100",
@@ -10,31 +10,31 @@ const prices = [
   "$300 - $500",
   "Over $500",
 ];
-const ShopAside = ({ categories, brands }: shopProps) => {
-  return (
-    <aside className="max-w-60 px-3 border-r border-shop-primary pt-5">
-      <div className="categories py-3 mb-2">
-        <h3 className="font-semibold text-lg pb-1 mb-2 border-b text-shop-orange tracking-widest">
-          Categories
-        </h3>
-        {categories.map((category: Category) => (
-          <div
-            key={category.title}
-            className="shop-list-item flex items-center gap-2 py-1 w-full"
-          >
-            <input
-              type="checkbox"
-              name={category.title}
-              id={category.title}
-              className="w-4 h-4"
-            />
-            <label htmlFor={category.title} className="block w-full ">
-              {category.title}
-            </label>
-          </div>
-        ))}
-      </div>
 
+type AsideProps = {
+  categories: Category[];
+  brands: Brand[];
+  category: string | null;
+  setCategory: Dispatch<SetStateAction<string | null>>;
+  brand: string | null;
+  setBrand: Dispatch<SetStateAction<string | null>>;
+};
+
+const ShopAside = ({
+  categories,
+  brands,
+  category,
+  setCategory,
+  brand,
+  setBrand,
+}: AsideProps) => {
+  return (
+    <aside className="max-w-60 px-3 min-h-[calc(100vh-160px)] overflow-hidden md:border-r border-shop-primary pt-2">
+      <CategoriesList
+        categories={categories}
+        selectedCategory={category}
+        setCategory={setCategory}
+      />
       {/* Brands */}
       <div className="brands py-3 mb-5">
         <h3 className="font-semibold text-lg pb-1 mb-2 border-b text-shop-orange tracking-widest">
@@ -59,7 +59,7 @@ const ShopAside = ({ categories, brands }: shopProps) => {
       </div>
 
       {/* Prices */}
-      <div className="price border-b py-3">
+      <div className="price py-3">
         <h3 className="font-semibold text-lg pb-1 mb-2 border-b text-shop-orange tracking-widest">
           Price
         </h3>
