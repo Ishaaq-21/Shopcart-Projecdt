@@ -11,6 +11,8 @@ type AsideProps = {
   setSelectedCategory: Dispatch<SetStateAction<string | null>>;
   selectedBrand: string | null;
   setSelectedBrand: Dispatch<SetStateAction<string | null>>;
+  selectedPrice: string;
+  setSelectedPrice: Dispatch<SetStateAction<string | null>>;
 };
 
 const ShopAside = ({
@@ -24,7 +26,7 @@ const ShopAside = ({
   setSelectedPrice,
 }: AsideProps) => {
   return (
-    <aside className="max-w-60 px-3 min-h-[calc(100vh-160px)] overflow-hidden md:border-r border-shop-primary pt-2">
+    <aside className="scrollbar-hide max-w-60 px-3 md:h-[calc(100vh-160px)] overflow-y-scroll md:border-r border-shop-primary pt-2">
       <CategoriesList
         categories={categories}
         selectedCategory={selectedCategory}
