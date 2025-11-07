@@ -6,13 +6,13 @@ import type { Category } from "../../../../sanity.types";
 export type CategoriesListProps = {
   categories: Category[];
   selectedCategory: string | null;
-  setCategory: Dispatch<SetStateAction<string | null>>;
+  setSelectedCategory: Dispatch<SetStateAction<string | null>>;
 };
 
 const CategoriesList = ({
   categories,
   selectedCategory,
-  setCategory,
+  setSelectedCategory,
 }: CategoriesListProps) => {
   return (
     <div className="categories py-3 mb-2">
@@ -22,7 +22,7 @@ const CategoriesList = ({
 
       <RadioGroup
         value={selectedCategory ?? ""}
-        onValueChange={(val) => setCategory(val || null)}
+        onValueChange={(val) => setSelectedCategory(val || null)}
         className="space-y-1"
       >
         {categories.map((category) => {

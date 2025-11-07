@@ -37,10 +37,12 @@ const Shop = ({ categories, brands }: ShopProps) => {
         <ShopAside
           categories={categories}
           brands={brands}
-          category={selectedCategory}
-          setCategory={setSelectedCategory}
-          brand={selectedBrand}
-          setBrand={setSelectedBrand}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          selectedBrand={selectedBrand}
+          setSelectedBrand={setSelectedBrand}
+          selectedPrice={selectedPrice}
+          setSelectedPrice={setSelectedPrice}
         />
       </Container>
     </div>

@@ -15,29 +15,35 @@ const prices = [
 type AsideProps = {
   categories: Category[];
   brands: Brand[];
-  category: string | null;
-  setCategory: Dispatch<SetStateAction<string | null>>;
-  brand: string | null;
-  setBrand: Dispatch<SetStateAction<string | null>>;
+  selectedCategory: string | null;
+  setSelectedCategory: Dispatch<SetStateAction<string | null>>;
+  selectedBrand: string | null;
+  setSelectedBrand: Dispatch<SetStateAction<string | null>>;
 };
 
 const ShopAside = ({
   categories,
   brands,
-  category,
-  setCategory,
-  brand,
-  setBrand,
+  selectedCategory,
+  setSelectedCategory,
+  selectedBrand,
+  setSelectedBrand,
+  selectedPrice,
+  setSelectedPrice,
 }: AsideProps) => {
   return (
     <aside className="max-w-60 px-3 min-h-[calc(100vh-160px)] overflow-hidden md:border-r border-shop-primary pt-2">
       <CategoriesList
         categories={categories}
-        selectedCategory={category}
-        setCategory={setCategory}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
       />
       {/* Brands */}
-      <BrandsList brands={brands} setBrand={setBrand} selectedBrand={brand} />
+      <BrandsList
+        brands={brands}
+        setSelectedBrand={setSelectedBrand}
+        selectedBrand={selectedBrand}
+      />
 
       {/* Prices */}
       <div className="price py-3">

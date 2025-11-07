@@ -1,15 +1,19 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import React from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { Brand, Category } from "../../../../sanity.types";
+import type { Brand } from "../../../../sanity.types";
 
 export type BrandsListProps = {
   brands: Brand[];
   selectedBrand: string | null;
-  setBrand: Dispatch<SetStateAction<string | null>>;
+  setSelectedBrand: Dispatch<SetStateAction<string | null>>;
 };
 
-const BrandsList = ({ brands, selectedBrand, setBrand }: BrandsListProps) => {
+const BrandsList = ({
+  brands,
+  selectedBrand,
+  setSelectedBrand,
+}: BrandsListProps) => {
   return (
     <div className="Brands py-3 mb-2">
       <h3 className="font-semibold text-lg pb-1 mb-2 border-b text-shop-orange tracking-widest">
@@ -18,7 +22,7 @@ const BrandsList = ({ brands, selectedBrand, setBrand }: BrandsListProps) => {
 
       <RadioGroup
         value={selectedBrand ?? ""}
-        onValueChange={(val) => setBrand(val || null)}
+        onValueChange={(val) => setSelectedBrand(val || null)}
         className="space-y-1"
       >
         {brands.map((brand) => {
