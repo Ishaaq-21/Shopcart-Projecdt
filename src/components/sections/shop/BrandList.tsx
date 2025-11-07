@@ -43,6 +43,12 @@ const BrandsList = ({ brands, selectedBrand, setBrand }: BrandsListProps) => {
           );
         })}
       </RadioGroup>
+      <button
+        onClick={() => setBrand("")}
+        className="mt-3 text-s text-shop-orange hover:text-orange-500 hover-effect underline"
+      >
+        Reset filters
+      </button>
     </div>
   );
 };
