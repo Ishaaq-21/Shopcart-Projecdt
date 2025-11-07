@@ -11,7 +11,7 @@ type AsideProps = {
   setSelectedCategory: Dispatch<SetStateAction<string | null>>;
   selectedBrand: string | null;
   setSelectedBrand: Dispatch<SetStateAction<string | null>>;
-  selectedPrice: string;
+  selectedPrice: string | null;
   setSelectedPrice: Dispatch<SetStateAction<string | null>>;
 };
 

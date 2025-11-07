@@ -21,7 +21,7 @@ const Shop = ({ categories, brands }: ShopProps) => {
     categoryParams || null
   );
   const [selectedBrand, setSelectedBrand] = useState(brandParams || null);
-  const [selectedPrice, setSelectedPrice] = useState("");
+  const [selectedPrice, setSelectedPrice] = useState<string | null>(null);
   return (
     <div>
       {" "}
