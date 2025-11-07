@@ -3,16 +3,16 @@ import React from "react";
 import type { Dispatch, SetStateAction } from "react";
 
 export type PriceListProps = {
-  selectedPrice: string;
-  setSelectedPrice: Dispatch<SetStateAction<string>>;
+  selectedPrice: string | null;
+  setSelectedPrice: Dispatch<SetStateAction<string | null>>;
 };
 
 const prices = [
-  "Under $100",
-  "$100 - $200",
-  "$200 - $300",
-  "$300 - $500",
-  "Over $500",
+  { title: "Under $100", value: "0-100" },
+  { title: "$100 - $200", value: "100-200" },
+  { title: "$200 - $300", value: "200-300" },
+  { title: "$300 - $500", value: "300-500" },
+  { title: "Over $500", value: "500-10000" },
 ];
 const PriceList = ({ selectedPrice, setSelectedPrice }: PriceListProps) => {
   return (
@@ -27,8 +27,8 @@ const PriceList = ({ selectedPrice, setSelectedPrice }: PriceListProps) => {
         className="space-y-1"
       >
         {prices.map((price) => {
-          const value = price ?? "";
-          const isSelected = selectedPrice === price;
+          const value = price.value ?? "";
+          const isSelected = selectedPrice === value;
 
           return (
             <label
@@ -43,7 +43,7 @@ const PriceList = ({ selectedPrice, setSelectedPrice }: PriceListProps) => {
                 id={value}
                 className="rounded-sm border-black group-hover:border-shop-primary transition-colors"
               />
-              <span>{price}</span>
+              <span>{price.title}</span>
             </label>
           );
         })}
