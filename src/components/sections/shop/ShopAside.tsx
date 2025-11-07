@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import { Brand, Category } from "../../../../sanity.types";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import CategoriesList from "./CategoriesList";
+import BrandsList from "./BrandList";
 
 const prices = [
   "Under $100",
@@ -36,27 +37,7 @@ const ShopAside = ({
         setCategory={setCategory}
       />
       {/* Brands */}
-      <div className="brands py-3 mb-5">
-        <h3 className="font-semibold text-lg pb-1 mb-2 border-b text-shop-orange tracking-widest">
-          Brands
-        </h3>
-        {brands.map((brand: Brand) => (
-          <div
-            key={brand.title}
-            className="shop-list-item flex items-center gap-2 py-1  w-full"
-          >
-            <input
-              type="checkbox"
-              name={brand.title}
-              id={brand.title}
-              className="w-4 h-4"
-            />
-            <label htmlFor={brand.title} className="block w-full ">
-              {brand.title}
-            </label>{" "}
-          </div>
-        ))}
-      </div>
+      <BrandsList brands={brands} setBrand={setBrand} selectedBrand={brand} />
 
       {/* Prices */}
       <div className="price py-3">
