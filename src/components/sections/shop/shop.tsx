@@ -30,9 +30,20 @@ const Shop = ({ categories, brands }: ShopProps) => {
           <Title className="font-bold uppercase !text-lg">
             Get the products based on your needs
           </Title>
-          <button className="text-lg text-shop-orange hover:text-orange-500 hover-effect underline">
-            Reset filters
-          </button>
+          {(selectedCategory !== null ||
+            selectedBrand !== null ||
+            selectedPrice !== null) && (
+            <button
+              onClick={() => {
+                setSelectedCategory(null);
+                setSelectedBrand(null);
+                setSelectedPrice(null);
+              }}
+              className="text-lg text-shop-orange hover:text-orange-500 hover-effect underline"
+            >
+              Reset Filters
+            </button>
+          )}
         </div>
         <ShopAside
           categories={categories}
