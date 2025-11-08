@@ -13,8 +13,9 @@ import ProductCard from "@/components/ui/customUI/ProductCard";
 export type ShopProps = {
   categories: Category[];
   brands: Brand[];
+  initialProducts: Product[];
 };
-const Shop = ({ categories, brands }: ShopProps) => {
+const Shop = ({ categories, brands, initialProducts }: ShopProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -22,7 +23,7 @@ const Shop = ({ categories, brands }: ShopProps) => {
   const categoryParams = searchParams.get("category");
 
   // States
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<Product[]>(initialProducts);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState(
