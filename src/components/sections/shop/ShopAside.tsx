@@ -26,7 +26,7 @@ const ShopAside = ({
   setSelectedPrice,
 }: AsideProps) => {
   return (
-    <aside className="scrollbar-hide max-w-60 px-3 md:h-[calc(100vh-160px)] overflow-y-scroll md:border-r border-shop-primary pt-2">
+    <aside className="scrollbar-hide min-w-60 px-3 md:h-[calc(100vh-160px)] overflow-y-scroll md:border-r border-shop-primary pt-2">
       <CategoriesList
         categories={categories}
         selectedCategory={selectedCategory}
