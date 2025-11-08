@@ -49,7 +49,7 @@ const ShopByBrands = async () => {
           brands.map((brand: Brand) => {
             return brand.image ? (
               <Link
-                href={`/shop?brands=${brand.slug?.current}`}
+                href={`/shop?brand=${brand.slug?.current}`}
                 key={brand._id}
                 className="p-2 bg-white relative min-h-28 flex-center overflow-hidden rounded-md hover:shadow-2xl hover-effect"
               >
