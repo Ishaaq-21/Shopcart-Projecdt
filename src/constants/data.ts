@@ -1,7 +1,9 @@
-export type HeaderMenuItemType = {
-  title: "Home" | "Shop" | "Blog" | "Contact" | "Hot Deal";
-  href: "/" | "/shop" | "/blog" | "/contact" | "/deal";
-};
+import {
+  Category,
+  CategoryLink,
+  HeaderMenuItemType,
+  QuickLink,
+} from "../../types/types";
 
 export const headerMenuData: HeaderMenuItemType[] = [
   {
@@ -23,25 +25,7 @@ export const headerMenuData: HeaderMenuItemType[] = [
 ];
 
 //Quick Links in the footer --------------------------
-export type QuickLinkTitle =
-  | "About us"
-  | "Contact us"
-  | "Terms & Conditions"
-  | "Privacy Policy"
-  | "FAQs"
-  | "Help";
 
-export type QuickLinkHref =
-  | "/about"
-  | "/contact"
-  | "/terms"
-  | "/privacy"
-  | "/faqs"
-  | "/help";
-export type QuickLink = {
-  title: QuickLinkTitle;
-  href: QuickLinkHref;
-};
 export const quickLinksData: QuickLink[] = [
   { title: "About us", href: "/about" },
   { title: "Contact us", href: "/contact" },
@@ -54,20 +38,9 @@ export const quickLinksData: QuickLink[] = [
 //-----------------------------------------------------
 
 // Categories in the footer ------------------------------
-export type Category = {
-  title: string;
-  href:
-    | "mobiles"
-    | "appliances"
-    | "smartphones"
-    | "air-conditioners"
-    | "washing-machine"
-    | "kitchen-appliances"
-    | "gadget-accessories";
-};
 
 // 2️⃣ Initialize the array with that strict type
-export const categoriesData: Category[] = [
+export const categoriesData: CategoryLink[] = [
   { title: "Mobiles", href: "mobiles" },
   { title: "Appliances", href: "appliances" },
   { title: "Smartphones", href: "smartphones" },
