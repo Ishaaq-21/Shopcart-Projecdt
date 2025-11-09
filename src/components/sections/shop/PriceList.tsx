@@ -28,7 +28,7 @@ const PriceList = ({ selectedPrice, setSelectedPrice }: PriceListProps) => {
       <RadioGroup
         aria-labelledby={headingId}
         value={selectedPrice ?? ""}
-        onValueChange={(val) => setSelectedPrice(val)}
+        onValueChange={(val) => setSelectedPrice(val || null)}
         className="space-y-1"
       >
         {prices.map((price) => {
