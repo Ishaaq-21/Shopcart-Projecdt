@@ -123,7 +123,7 @@ const Shop = ({ categories, brands, initialProducts }: ShopProps) => {
         ) : !products.length ? (
           <NoProductAvailable selectedTab={""} />
         ) : (
-          <div className="scrollbar-hide overflow-y-scroll grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-5">
+          <div className="scrollbar-hide max-h-[100vh] overflow-y-scroll auto-rows-max grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-5">
             {products.map((product: Product, index) => (
               <ProductCard key={product?._id} product={product} index={index} />
             ))}
