@@ -1,3 +1,4 @@
+import next from "next";
 import { sanityFetch } from "../lib/live";
 import {
   BRAND_QUERY,
@@ -5,6 +6,7 @@ import {
   DEAL_PRODUCTS,
   LATEST_BLOG_QUERY,
   PRODUCT_BY_SLUG_QUERY,
+  PRODUCTS_QUERY,
 } from "./query";
 
 const getCategories = async (quantity?: number) => {
@@ -86,6 +88,18 @@ const getBrand = async (slug: string) => {
     return null;
   }
 };
+
+const getAllProducts = async () => {
+  try {
+    const products = await sanityFetch({
+      query: PRODUCTS_QUERY,
+    });
+    return products?.data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
 export {
   getCategories,
   getAllBrands,
@@ -93,4 +107,5 @@ export {
   getDealProducts,
   getProductBySlug,
   getBrand,
+  getAllProducts,
 };
