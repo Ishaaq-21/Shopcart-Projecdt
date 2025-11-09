@@ -1,5 +1,5 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import React from "react";
+import React, { useId } from "react";
 import type { Dispatch, SetStateAction } from "react";
 
 export type PriceListProps = {
@@ -15,13 +15,18 @@ const prices = [
   { title: "Over $500", value: "500-10000" },
 ];
 const PriceList = ({ selectedPrice, setSelectedPrice }: PriceListProps) => {
+  const headingId = useId();
   return (
     <div className="Price py-3 mb-2">
-      <h3 className="font-semibold text-lg pb-1 mb-2 border-b text-shop-orange tracking-widest">
+      <h3
+        id={headingId}
+        className="font-semibold text-lg pb-1 mb-2 border-b text-shop-orange tracking-widest"
+      >
         Price
       </h3>
 
       <RadioGroup
+        aria-labelledby={headingId}
         value={selectedPrice ?? ""}
         onValueChange={(val) => setSelectedPrice(val)}
         className="space-y-1"

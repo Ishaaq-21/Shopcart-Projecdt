@@ -1,5 +1,5 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import React from "react";
+import React, { useId } from "react";
 import type { Dispatch, SetStateAction } from "react";
 import type { Brand } from "../../../../sanity.types";
 
@@ -14,13 +14,19 @@ const BrandsList = ({
   selectedBrand,
   setSelectedBrand,
 }: BrandsListProps) => {
+  const headingId = useId();
+
   return (
     <div className="Brands py-3 mb-2">
-      <h3 className="font-semibold text-lg pb-1 mb-2 border-b text-shop-orange tracking-widest">
+      <h3
+        id={headingId}
+        className="font-semibold text-lg pb-1 mb-2 border-b text-shop-orange tracking-widest"
+      >
         Brands
       </h3>
 
       <RadioGroup
+        aria-labelledby={headingId}
         value={selectedBrand ?? ""}
         onValueChange={(val) => setSelectedBrand(val || null)}
         className="space-y-1"
