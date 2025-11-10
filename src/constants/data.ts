@@ -3,7 +3,7 @@ import {
   CategoryLink,
   HeaderMenuItemType,
   QuickLink,
-} from "../../types/types";
+} from "../types/types";
 
 export const headerMenuData: HeaderMenuItemType[] = [
   {
