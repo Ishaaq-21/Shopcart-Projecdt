@@ -1,5 +1,5 @@
 "use client";
-import { createContext, ReactNode, useReducer } from "react";
+import { createContext, ReactNode, useContext, useReducer } from "react";
 import { cartReducer, initialCartState } from "./CartReducer";
 
 const CartContext = createContext({});
@@ -15,3 +15,5 @@ const CartReducerContextProvider = ({ children }: { children: ReactNode }) => {
 };
 
 export default CartReducerContextProvider;
+
+export const useCartContext = () => useContext(CartContext);
