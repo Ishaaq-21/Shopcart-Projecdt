@@ -1,3 +1,5 @@
+import { Product } from "../../sanity.types";
+
 export type HeaderMenuItemType = {
   title: "Home" | "Shop" | "Blog" | "Contact" | "Hot Deal";
   href: "/" | "/shop" | "/blog" | "/contact" | "/deal";
@@ -32,4 +34,17 @@ export type CategoryLink = {
     | "washing-machine"
     | "kitchen-appliances"
     | "gadget-accessories";
+};
+
+// Type for each item in the cart
+export type CartItem = {
+  product: Product;
+  quantity: number;
+};
+
+// Type for the overall cart state
+export type CartState = {
+  items: CartItem[]; // how can I map over only the products ?
+  totalItems: number; // sum of all quantities
+  totalPrice: number; // total price of all items
 };
