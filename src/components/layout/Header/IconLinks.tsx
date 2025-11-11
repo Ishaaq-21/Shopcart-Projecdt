@@ -1,5 +1,5 @@
 "use client";
-import CartIcon from "@/components/atoms/CartIcon";
+import CartIcon from "@/components/atoms/cart/CartIcon";
 import FavIcon from "@/components/atoms/FavIcon";
 import SearchIcon from "@/components/atoms/SearchIcon";
 import SignIn from "@/components/atoms/SignIn";
