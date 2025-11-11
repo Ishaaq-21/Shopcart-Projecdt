@@ -15,14 +15,22 @@ const ExistingCartItem = ({
       payload: product,
     });
   };
-
+  const handleDecrement = () => {
+    dispatch({
+      type: "REMOVE_ITEM",
+      payload: product._id,
+    });
+  };
   return (
     <div>
       <div className="quantity flex justify-between items-center">
         <span className="text-sm text-black/70">Quantity</span>
         <div className="flex gap-3 items-center">
           {" "}
-          <span className="text-xl"> - </span>
+          <button onClick={handleDecrement} className="text-xl">
+            {" "}
+            -{" "}
+          </button>
           {productCount}
           <button onClick={handleIncrement} className="text-xl">
             {" "}
