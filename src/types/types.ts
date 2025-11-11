@@ -47,4 +47,5 @@ export type CartState = {
   items: CartItem[]; // how can I map over only the products ?
   totalItems: number; // sum of all quantities
   totalPrice: number; // total price of all items
+  getItemCountById: (state: CartState, productId: string) => number;
 };
