@@ -7,6 +7,11 @@ export const initialCartState: CartState = {
   items: [],
   totalItems: 0,
   totalPrice: 0,
+  getItemCountById: (state: CartState, productId: string) => {
+    return (
+      state.items.find((item) => item.product._id === productId)?.quantity || 0
+    );
+  },
 };
 const calculateTotal = (items: CartItem[]) => {
   const totalQuantity = items.reduce((sum, item) => {
