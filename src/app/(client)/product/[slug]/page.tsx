@@ -6,7 +6,7 @@ import React, { ReactNode } from "react";
 import { Product } from "../../../../../sanity.types";
 import Title from "@/components/atoms/Title";
 import StartsReview from "@/components/atoms/StartsReview";
-import AddToCartBtn from "@/components/atoms/AddToCartBtn";
+import AddToCartBtn from "@/components/atoms/cart/AddToCartBtn";
 import AddToWishlistBtn from "@/components/atoms/AddToWishlistBtn";
 import ProductChars from "@/components/ui/customUI/ProductChars";
 import {
