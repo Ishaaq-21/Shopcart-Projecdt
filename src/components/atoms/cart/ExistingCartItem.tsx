@@ -1,5 +1,6 @@
 import { useCartContext } from "@/contexts/Cart/CartContextProvider";
 import { Product } from "../../../../sanity.types";
+import toast from "react-hot-toast";
 
 const ExistingCartItem = ({
   product,
@@ -14,12 +15,15 @@ const ExistingCartItem = ({
       type: "ADD_ITEM",
       payload: product,
     });
+
+    toast.success(`${product.name?.substring(0, 10)}... added successfully`);
   };
   const handleDecrement = () => {
     dispatch({
       type: "REMOVE_ITEM",
       payload: product._id,
     });
+    toast.success(`${product.name?.substring(0, 10)}... removed successfully`);
   };
   return (
     <div>
