@@ -1,3 +1,4 @@
+import { useCartContext } from "@/contexts/Cart/CartContextProvider";
 import { Product } from "../../../../sanity.types";
 
 const ExistingCartItem = ({
@@ -7,15 +8,26 @@ const ExistingCartItem = ({
   product: Product;
   productCount: number;
 }) => {
+  const { state, dispatch } = useCartContext();
+  const handleIncrement = () => {
+    dispatch({
+      type: "ADD_ITEM",
+      payload: product,
+    });
+  };
+
   return (
     <div>
       <div className="quantity flex justify-between items-center">
         <span className="text-sm text-black/70">Quantity</span>
-        <div>
+        <div className="flex gap-3 items-center">
           {" "}
-          <span className="text-lg"> - </span>
+          <span className="text-xl"> - </span>
           {productCount}
-          <span className="text-lg"> + </span>
+          <button onClick={handleIncrement} className="text-xl">
+            {" "}
+            +{" "}
+          </button>
         </div>
       </div>
       <hr className="my-2" />
