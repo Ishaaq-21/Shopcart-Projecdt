@@ -22,4 +22,11 @@ const CartReducerContextProvider = ({ children }: { children: ReactNode }) => {
 
 export default CartReducerContextProvider;
 
-export const useCartContext = () => useContext(CartContext);
+export const useCartContext = () => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("useCartContext must be used inside a CartContextProvider");
+  }
+
+  return context;
+};
