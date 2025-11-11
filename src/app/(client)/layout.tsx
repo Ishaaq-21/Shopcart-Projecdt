@@ -3,6 +3,7 @@ import "../globals.css";
 import Header from "@/components/layout/Header/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/layout/Footer/Footer";
+import CartReducerContextProvider from "@/contexts/Cart/CartContextProvider";
 export const metadata: Metadata = {
   // Title configuration
   title: {
@@ -21,9 +22,11 @@ export default function ShopLayout({
 }>) {
   return (
     <ClerkProvider>
-      <Header />
-      <main className="mb-20 pt-[70px]">{children}</main>
-      <Footer />
+      <CartReducerContextProvider>
+        <Header />
+        <main className="mb-20 pt-[70px]">{children}</main>
+        <Footer />
+      </CartReducerContextProvider>
     </ClerkProvider>
   );
 }
