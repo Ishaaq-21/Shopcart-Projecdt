@@ -15,7 +15,7 @@ const CartIcon = () => {
         role="button"
         className="w-4 h-4 md:w-5 md:h-5 text-white md:text-black hover:text-shop-primary hover-effect"
       />
-      <span className="header-icon-span ">{state.totalItems}</span>
+      <span className="header-icon-span ">{state.items.length}</span>
     </Link>
   );
 };
