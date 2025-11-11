@@ -1,8 +1,14 @@
 "use client";
 import { createContext, ReactNode, useContext, useReducer } from "react";
-import { cartReducer, initialCartState } from "./CartReducer";
+import { CartAction, cartReducer, initialCartState } from "./CartReducer";
+import { CartState } from "@/types/types";
 
-const CartContext = createContext({});
+type CartContextType = {
+  state: CartState;
+  dispatch: React.Dispatch<CartAction>;
+};
+
+const CartContext = createContext<CartContextType | undefined>(undefined);
 
 const CartReducerContextProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(cartReducer, initialCartState);
