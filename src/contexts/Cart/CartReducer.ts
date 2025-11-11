@@ -1,7 +1,9 @@
 import { CartItem, CartState } from "@/types/types";
 import { Product } from "../../../sanity.types";
 
-export type CartAction = { type: "ADD_ITEM"; payload: Product };
+export type CartAction =
+  | { type: "ADD_ITEM"; payload: Product }
+  | { type: "REMOVE_ITEM"; payload: string };
 
 export const initialCartState: CartState = {
   items: [],
