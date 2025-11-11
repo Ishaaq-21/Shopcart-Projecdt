@@ -1,6 +1,8 @@
 import { CartItem, CartState } from "@/types/types";
 import { Product } from "../../../sanity.types";
 
+export type CartAction = { type: "ADD_ITEM"; payload: Product };
+
 export const initialCartState: CartState = {
   items: [],
   totalItems: 0,
@@ -53,11 +55,10 @@ const addProductItem = (state: CartState, product: Product): CartState => {
 
 // ---------------------------------------------------------------------
 
-export function cartReducer(state: CartState, action: any) {
+export function cartReducer(state: CartState, action: CartAction) {
   switch (action.type) {
     case "ADD_ITEM":
       return addProductItem(state, action.payload);
-
     default:
       return state;
   }
