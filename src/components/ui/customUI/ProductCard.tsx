@@ -5,7 +5,7 @@ import { Product } from "../../../../sanity.types";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
 import AddToWishlistBtn from "@/components/atoms/AddToWishlistBtn";
-import AddToCartBtn from "@/components/atoms/AddToCartBtn";
+import AddToCartBtn from "@/components/atoms/cart/AddToCartBtn";
 import StartsReview from "@/components/atoms/StartsReview";
 
 const StatusIcon = ({
