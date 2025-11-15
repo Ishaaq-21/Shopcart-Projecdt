@@ -3,8 +3,8 @@ import React from "react";
 import { urlFor } from "@/sanity/lib/image";
 import { CartItem } from "@/types/types";
 import FavIcon from "@/components/atoms/FavIcon";
-import { Trash } from "lucide-react";
 import IncrementDecrementQuantity from "@/components/atoms/cart/IncrementDecrementQuantity";
+import RemoveEntireItem from "@/components/atoms/cart/RemoveEntireItemBtn";
 
 // I need to fix the layout of this.
 const ProductCart = ({ cartItem }: { cartItem: CartItem }) => {
@@ -46,7 +46,7 @@ const ProductCart = ({ cartItem }: { cartItem: CartItem }) => {
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-x-5">
             <FavIcon />
-            <Trash size={20} />
+            <RemoveEntireItem product={cartItem.product} />
           </div>
           <IncrementDecrementQuantity product={cartItem.product} />
         </div>
