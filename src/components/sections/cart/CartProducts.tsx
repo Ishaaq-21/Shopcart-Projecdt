@@ -3,6 +3,7 @@ import React from "react";
 import { useCartContext } from "@/contexts/CartFavContextProvider";
 import { CartItem } from "@/types/types";
 import ProductCart from "./ProductCart";
+import ResetCart from "@/components/atoms/cart/ResetCart";
 
 const CartProducts = () => {
   const { state } = useCartContext();

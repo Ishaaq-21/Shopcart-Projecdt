@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { urlFor } from "@/sanity/lib/image";
 import { CartItem } from "@/types/types";
-import FavIcon from "@/components/atoms/FavIcon";
+import FavIcon from "@/components/atoms/wishList/FavIcon";
 import IncrementDecrementQuantity from "@/components/atoms/cart/IncrementDecrementQuantity";
 import RemoveEntireItem from "@/components/atoms/cart/RemoveEntireItemBtn";
 

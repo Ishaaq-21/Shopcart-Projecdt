@@ -3,7 +3,7 @@ import "../globals.css";
 import Header from "@/components/layout/Header/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/layout/Footer/Footer";
-import CartReducerContextProvider from "@/contexts/Cart/CartContextProvider";
+import CartReducerContextProvider from "@/contexts/CartFavContextProvider";
 export const metadata: Metadata = {
   // Title configuration
   title: {
