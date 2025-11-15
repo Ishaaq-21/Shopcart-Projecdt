@@ -34,7 +34,7 @@ const AddToCartBtn = ({
       {isOutOfStock ? "Out of Stock" : "Add to cart"}
     </button>
   ) : (
-    <ExistingCartItem product={product} productCount={productCount} />
+    <ExistingCartItem product={product} />
   );
 };
 
