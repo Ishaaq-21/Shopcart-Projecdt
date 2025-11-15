@@ -3,7 +3,10 @@ import { Product } from "../../../sanity.types";
 
 export type CartAction =
   | { type: "ADD_ITEM"; payload: Product }
-  | { type: "REMOVE_ITEM"; payload: string };
+  | {
+      type: "REMOVE_ITEM";
+      payload: { productId: string; removeEntirely: boolean };
+    };
 
 export const initialCartState: CartState = {
   items: [],
@@ -64,26 +67,34 @@ const addProductItem = (state: CartState, product: Product): CartState => {
 
 // ----------- R E M O V E   P R O D U C T  --------------------
 
-const removeProductItem = (state: CartState, productId: string): CartState => {
-  const existingIndex = state.items.findIndex(
-    (item) => item.product._id === productId
-  );
+const removeProductItem = (
+  state: CartState,
+  productId: string,
+  removeEntirely: boolean = false
+): CartState => {
   let updatedItems: CartItem[] = [];
 
-  if (existingIndex !== -1) {
-    const deletedItem = state.items[existingIndex];
-    console.log("delleeeeeted-Item ->>>>", deletedItem);
-    if (deletedItem.quantity > 1) {
-      updatedItems = [
-        ...state.items.slice(0, existingIndex),
-        { ...deletedItem, quantity: deletedItem.quantity - 1 },
-        ...state.items.slice(existingIndex + 1),
-      ];
-    } else {
-      updatedItems = [
-        ...state.items.slice(0, existingIndex),
-        ...state.items.slice(existingIndex + 1),
-      ];
+  if (removeEntirely) {
+    updatedItems = state.items.filter((item) => item.product._id !== productId);
+  } else {
+    const existingIndex = state.items.findIndex(
+      (item) => item.product._id === productId
+    );
+
+    if (existingIndex !== -1) {
+      const deletedItem = state.items[existingIndex];
+      if (deletedItem.quantity > 1) {
+        updatedItems = [
+          ...state.items.slice(0, existingIndex),
+          { ...deletedItem, quantity: deletedItem.quantity - 1 },
+          ...state.items.slice(existingIndex + 1),
+        ];
+      } else {
+        updatedItems = [
+          ...state.items.slice(0, existingIndex),
+          ...state.items.slice(existingIndex + 1),
+        ];
+      }
     }
   }
 
@@ -104,7 +115,11 @@ export function cartReducer(state: CartState, action: CartAction) {
     case "ADD_ITEM":
       return addProductItem(state, action.payload);
     case "REMOVE_ITEM":
-      return removeProductItem(state, action.payload);
+      return removeProductItem(
+        state,
+        action.payload.productId,
+        action.payload.removeEntirely
+      );
     default:
       return state;
   }
