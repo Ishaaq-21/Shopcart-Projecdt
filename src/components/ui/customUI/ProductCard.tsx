@@ -4,7 +4,7 @@ import React from "react";
 import { Product } from "../../../../sanity.types";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
-import AddToWishlistBtn from "@/components/atoms/AddToWishlistBtn";
+import AddToWishlistBtn from "@/components/atoms/wishList/AddToWishlistBtn";
 import AddToCartBtn from "@/components/atoms/cart/AddToCartBtn";
 import StartsReview from "@/components/atoms/StartsReview";
 

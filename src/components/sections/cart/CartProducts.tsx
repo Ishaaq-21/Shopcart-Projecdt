@@ -6,15 +6,26 @@ import ProductCart from "./ProductCart";
 import ResetCart from "@/components/atoms/cart/ResetCart";
 
 const CartProducts = () => {
-  const { state } = useCartContext();
-  const cartItems = state.items;
+  const { cartState } = useCartContext();
+  const cartItems = cartState.items;
+
+  if (!cartItems || cartItems.length === 0) {
+    return (
+      <div className="w-full p-5 bg-white border border-red-500 rounded-md">
+        Your cart is empty.
+      </div>
+    );
+  }
+
   return (
-    <div className="carts-container">
-      {cartItems &&
-        cartItems.length > 0 &&
-        cartItems.map((item: CartItem) => (
-          <ProductCart key={item.product._id} cartItem={item} />
-        ))}
+    <div className="cart-container">
+      {cartItems.map((item: CartItem) => (
+        <ProductCart key={item.product._id} cartItem={item} />
+      ))}
+
+      <div className="w-full p-5 bg-white">
+        <ResetCart />
+      </div>
     </div>
   );
 };
