@@ -23,7 +23,7 @@ const IncrementDecrementQuantity = ({ product }: { product: Product }) => {
   const handleDecrement = () => {
     dispatch({
       type: "REMOVE_ITEM",
-      payload: product._id,
+      payload: { productId: product._id, removeEntirely: false },
     });
     toast.success(`${product.name?.substring(0, 10)}... removed successfully`);
   };
