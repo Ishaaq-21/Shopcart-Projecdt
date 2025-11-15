@@ -1,7 +1,8 @@
+"use client";
 import { ShoppingBag } from "lucide-react";
 import React from "react";
 import { Product } from "../../../../sanity.types";
-import { useCartContext } from "@/contexts/Cart/CartContextProvider";
+import { useCartContext } from "@/contexts/CartFavContextProvider";
 import ExistingCartItem from "./ExistingCartItem";
 
 const AddToCartBtn = ({
@@ -12,14 +13,14 @@ const AddToCartBtn = ({
   className?: string;
 }) => {
   const isOutOfStock = product?.stock === 0;
-  const { state, dispatch } = useCartContext();
+  const { cartState, cartDispatch } = useCartContext();
   const handleClick = () => {
-    dispatch({
+    cartDispatch({
       type: "ADD_ITEM",
       payload: product,
     });
   };
-  const productCount = state.getItemCountById(state, product._id);
+  const productCount = cartState.getItemCountById(cartState, product._id);
   return productCount === 0 ? (
     <button
       onClick={handleClick}

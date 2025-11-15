@@ -1,19 +1,19 @@
 "use client";
-import { useCartContext } from "@/contexts/Cart/CartContextProvider";
+import { useCartContext } from "@/contexts/CartFavContextProvider";
 import React from "react";
 import { Product } from "../../../../sanity.types";
 import toast from "react-hot-toast";
 import { Minus, Plus } from "lucide-react";
 
 const IncrementDecrementQuantity = ({ product }: { product: Product }) => {
-  const { state, dispatch } = useCartContext();
-  const productCount = state.getItemCountById(state, product._id);
+  const { cartState, cartDispatch } = useCartContext();
+  const productCount = cartState.getItemCountById(cartState, product._id);
   const handleIncrement = () => {
     if (product.stock && productCount >= product.stock) {
       toast.error("The product is out of stock");
       return;
     }
-    dispatch({
+    cartDispatch({
       type: "ADD_ITEM",
       payload: product,
     });
@@ -21,7 +21,7 @@ const IncrementDecrementQuantity = ({ product }: { product: Product }) => {
     toast.success(`${product.name?.substring(0, 10)}... added successfully`);
   };
   const handleDecrement = () => {
-    dispatch({
+    cartDispatch({
       type: "REMOVE_ITEM",
       payload: { productId: product._id, removeEntirely: false },
     });

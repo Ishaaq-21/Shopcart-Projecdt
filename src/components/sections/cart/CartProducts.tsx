@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useCartContext } from "@/contexts/Cart/CartContextProvider";
+import { useCartContext } from "@/contexts/CartFavContextProvider";
 import { CartItem } from "@/types/types";
 import ProductCart from "./ProductCart";
 

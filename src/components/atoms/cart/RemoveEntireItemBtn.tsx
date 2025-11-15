@@ -1,14 +1,14 @@
 "use client";
-import { useCartContext } from "@/contexts/Cart/CartContextProvider";
+import { useCartContext } from "@/contexts/CartFavContextProvider";
 import { Trash } from "lucide-react";
 import React from "react";
 import { Product } from "../../../../sanity.types";
 import toast from "react-hot-toast";
 
 const RemoveEntireItem = ({ product }: { product: Product }) => {
-  const { dispatch } = useCartContext();
+  const { cartDispatch } = useCartContext();
   const handleRemoveEntirely = () => {
-    dispatch({
+    cartDispatch({
       type: "REMOVE_ITEM",
       payload: { productId: product._id, removeEntirely: true },
     });

@@ -1,10 +1,10 @@
-import { useCartContext } from "@/contexts/Cart/CartContextProvider";
+import { useCartContext } from "@/contexts/CartFavContextProvider";
 import { Product } from "../../../../sanity.types";
 import IncrementDecrementQuantity from "./IncrementDecrementQuantity";
 
 const ExistingCartItem = ({ product }: { product: Product }) => {
-  const { state } = useCartContext();
-  const productCount = state.getItemCountById(state, product._id);
+  const { cartState } = useCartContext();
+  const productCount = cartState.getItemCountById(cartState, product._id);
 
   return (
     <div>
