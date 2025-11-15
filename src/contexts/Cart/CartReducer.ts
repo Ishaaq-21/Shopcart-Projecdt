@@ -6,6 +6,9 @@ export type CartAction =
   | {
       type: "REMOVE_ITEM";
       payload: { productId: string; removeEntirely: boolean };
+    }
+  | {
+      type: "RESET_CART";
     };
 
 export const initialCartState: CartState = {
@@ -120,6 +123,8 @@ export function cartReducer(state: CartState, action: CartAction) {
         action.payload.productId,
         action.payload.removeEntirely
       );
+    case "RESET_CART":
+      return initialCartState;
     default:
       return state;
   }
