@@ -5,6 +5,7 @@ import { CartItem } from "@/types/types";
 import FavIcon from "@/components/atoms/wishList/FavIcon";
 import IncrementDecrementQuantity from "@/components/atoms/cart/IncrementDecrementQuantity";
 import RemoveEntireItem from "@/components/atoms/cart/RemoveEntireItemBtn";
+import AddToWishlistBtn from "@/components/atoms/wishList/AddToWishlistBtn";
 
 // I need to fix the layout of this.
 const ProductCart = ({ cartItem }: { cartItem: CartItem }) => {
@@ -46,7 +47,7 @@ const ProductCart = ({ cartItem }: { cartItem: CartItem }) => {
 
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-x-5">
-            <FavIcon />
+            <AddToWishlistBtn product={cartItem.product} />
             <RemoveEntireItem product={cartItem.product} />
           </div>
           <IncrementDecrementQuantity product={cartItem.product} />
