@@ -16,6 +16,7 @@ const ProductCart = ({ cartItem }: { cartItem: CartItem }) => {
             src={urlFor(cartItem.product.images[0]).url()}
             alt="productImage"
             fill={true}
+            loading="lazy"
           />
         </div>
       )}
