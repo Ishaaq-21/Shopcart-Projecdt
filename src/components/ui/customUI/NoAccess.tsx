@@ -6,8 +6,8 @@ import React from "react";
 
 const NoAccess = () => {
   return (
-    <div className="mx-auto flex flex-col justify-center items-center gap-5 p-5 border-2 border-black/50 rounded-lg w-fit md:w-sm">
-      <Logo />
+    <div className="mx-auto flex flex-col justify-center items-center gap-5 py-7 px-5 border-2 border-black/50 rounded-lg w-fit md:w-sm bg-white">
+      <Logo className="-ml-3" />
       <Title className="w-fit">Welcome Back</Title>
       <p className="text-lg text-gray-600 w-fit">
         Please sign in to view your cart.
