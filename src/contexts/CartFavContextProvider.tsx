@@ -1,6 +1,17 @@
 "use client";
-import { createContext, ReactNode, useContext, useReducer } from "react";
-import { CartAction, cartReducer, initialCartState } from "./Cart/CartReducer";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useReducer,
+  useEffect,
+} from "react";
+import {
+  CartAction,
+  cartReducer,
+  getSavedState,
+  initialCartState,
+} from "./Cart/CartReducer";
 import { CartState } from "@/types/types";
 import favoriteReducer, {
   FavoriteAction,
@@ -21,11 +32,21 @@ const FavoriteContext = createContext<FavoriteContextType | undefined>(
   undefined
 );
 const CartReducerContextProvider = ({ children }: { children: ReactNode }) => {
-  const [cartState, cartDispatch] = useReducer(cartReducer, initialCartState);
+  const [cartState, cartDispatch] = useReducer(
+    cartReducer,
+    initialCartState,
+    getSavedState
+  );
   const [favoriteState, favDispatch] = useReducer(
     favoriteReducer,
     initialState
   );
+  useEffect(() => {
+    try {
+      const { getItemCountById, ...stateToSave } = cartState;
+      localStorage.setItem("cartState", JSON.stringify(stateToSave));
+    } catch (error) {}
+  }, [cartState]);
   return (
     <CartContext.Provider value={{ cartState, cartDispatch }}>
       <FavoriteContext.Provider value={{ favoriteState, favDispatch }}>

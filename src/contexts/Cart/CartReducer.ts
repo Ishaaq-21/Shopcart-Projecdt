@@ -21,6 +21,23 @@ export const initialCartState: CartState = {
     );
   },
 };
+
+export function getSavedState(): CartState {
+  if (typeof window === "undefined") return initialCartState;
+  try {
+    const raw = localStorage.getItem("cartState");
+    if (!raw) return initialCartState;
+    const parsed = JSON.parse(raw) as Partial<CartState>;
+    // merge parsed serializable fields into initialCartState and re-attach helper
+    return {
+      ...initialCartState,
+      ...parsed,
+      getItemCountById: initialCartState.getItemCountById,
+    };
+  } catch {
+    return initialCartState;
+  }
+}
 const calculateTotal = (items: CartItem[]) => {
   const totalQuantity = items.reduce((sum, item) => {
     return sum + item.quantity;
@@ -58,12 +75,13 @@ const addProductItem = (state: CartState, product: Product): CartState => {
   }
 
   const { totalQuantity, totalPrice } = calculateTotal(updatedItems);
-  return {
+  const newState: CartState = {
     ...state,
     items: updatedItems,
     totalItems: totalQuantity,
     totalPrice: totalPrice,
   };
+  return newState;
 };
 
 // ---------------------------------------------------------------------
@@ -103,12 +121,13 @@ const removeProductItem = (
 
   const { totalQuantity, totalPrice } = calculateTotal(updatedItems);
 
-  return {
+  const newState: CartState = {
     ...state,
     items: updatedItems,
     totalItems: totalQuantity,
     totalPrice: totalPrice,
   };
+  return newState;
 };
 
 // ---------------------------------------------------------------------
