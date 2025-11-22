@@ -4,6 +4,10 @@ import { useCartContext } from "@/contexts/CartFavContextProvider";
 import { CartItem } from "@/types/types";
 import ProductCart from "./ProductCart";
 import ResetCart from "@/components/atoms/cart/ResetCart";
+import { useAuth } from "@clerk/nextjs";
+import NoAccess from "@/components/ui/customUI/NoAccess";
+import EmptyCart from "@/components/sections/cart/EmptyCart";
+import CartSummary from "./CartSummary";
 
 const CartProducts = () => {
   const { cartState } = useCartContext();
@@ -15,11 +19,7 @@ const CartProducts = () => {
   }
 
   if (!cartItems || cartItems.length === 0) {
-    return (
-      <div className="w-full p-5 bg-white border border-red-500 rounded-md">
-        Your cart is empty.
-      </div>
-    );
+    return <EmptyCart />;
   }
 
   return (
