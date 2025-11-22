@@ -8,6 +8,11 @@ import ResetCart from "@/components/atoms/cart/ResetCart";
 const CartProducts = () => {
   const { cartState } = useCartContext();
   const cartItems = cartState.items;
+  const { isSignedIn } = useAuth();
+
+  if (!isSignedIn) {
+    return <NoAccess />;
+  }
 
   if (!cartItems || cartItems.length === 0) {
     return (
