@@ -24,7 +24,7 @@ export default function ShopLayout({
     <ClerkProvider>
       <CartReducerContextProvider>
         <Header />
-        <main className="mb-20 pt-[70px]">{children}</main>
+        <main className="pt-[70px]">{children}</main>
         <Footer />
       </CartReducerContextProvider>
     </ClerkProvider>
