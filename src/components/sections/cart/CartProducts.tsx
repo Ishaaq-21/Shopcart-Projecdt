@@ -23,14 +23,17 @@ const CartProducts = () => {
   }
 
   return (
-    <div className="cart-container">
-      {cartItems.map((item: CartItem) => (
-        <ProductCart key={item.product._id} cartItem={item} />
-      ))}
+    <div className="flex items-center gap-10 relative ">
+      <div className="cart-container flex-2 border border-black/20 rounded-md">
+        {cartItems.map((item: CartItem) => (
+          <ProductCart key={item.product._id} cartItem={item} />
+        ))}
 
-      <div className="w-full p-5 bg-white">
-        <ResetCart />
+        <div className="w-full p-5 bg-white">
+          <ResetCart />
+        </div>
       </div>
+      <CartSummary />
     </div>
   );
 };
