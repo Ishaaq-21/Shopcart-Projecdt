@@ -30,6 +30,12 @@ const PRODUCTS_QUERY = `
     ..., "categories": categories[]->title 
   }
 `;
+const MY_ORDERS_QUERY =
+  defineQuery(`*[_type == 'order' && clerkUserId == $userId] | order(orderData desc){
+...,products[]{
+  ...,product->
+}
+}`);
 export {
   BRANDS_QUERY,
   LATEST_BLOG_QUERY,
@@ -37,4 +43,5 @@ export {
   PRODUCT_BY_SLUG_QUERY,
   BRAND_QUERY,
   PRODUCTS_QUERY,
+  MY_ORDERS_QUERY,
 };
