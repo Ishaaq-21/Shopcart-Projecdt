@@ -4,13 +4,13 @@ import Title from "@/components/atoms/Title";
 import { SignUpButton } from "@clerk/nextjs";
 import React from "react";
 
-const NoAccess = () => {
+const NoAccess = ({ message }: { message: string }) => {
   return (
     <div className="mx-auto flex flex-col justify-center items-center gap-5 py-7 px-5 border-2 border-black/50 rounded-lg w-fit md:w-sm bg-white">
       <Logo className="-ml-3" />
       <Title className="w-fit">Welcome Back</Title>
       <p className="text-lg text-gray-600 w-fit">
-        Please sign in to view your cart.
+        Please sign in to view your {message}.
       </p>
       <SignIn className="flex justify-center items-center w-full border border-black py-1.5 rounded-md bg-shop-primary hover:bg-shop-orange hover-effect hover:!text-black" />
       <p className="text-sm text-gray-500">Don't have an account ? </p>
