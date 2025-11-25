@@ -9,7 +9,7 @@ const ExistingCartItem = ({ product }: { product: Product }) => {
   return (
     <div className="w-full">
       <div className="quantity flex justify-between items-center w-full">
-        <span className="text-sm text-black/70">Quantity</span>
+        <span className="text-sm text-black/70 mr-1">Quantity</span>
         <IncrementDecrementQuantity product={product} />
       </div>
       <hr className="my-2" />
