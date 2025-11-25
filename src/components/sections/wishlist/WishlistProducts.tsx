@@ -1,16 +1,18 @@
 "use client";
 import { useFavoriteContext } from "@/contexts/CartFavContextProvider";
 import React from "react";
+import WishListTable from "./WishListTable";
+import EmptyWishList from "./EmptyWishList";
 
 const WishlistProducts = () => {
   const { favoriteState } = useFavoriteContext();
   return (
     <div>
-      {favoriteState.favorites.map((item) => (
-        <p className="my-5 border rounded-md" key={item._id}>
-          {item.name}
-        </p>
-      ))}
+      {favoriteState.favorites.length > 0 ? (
+        <WishListTable favoritesItems={favoriteState.favorites} />
+      ) : (
+        <EmptyWishList />
+      )}
     </div>
   );
 };
