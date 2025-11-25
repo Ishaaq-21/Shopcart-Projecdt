@@ -30,7 +30,7 @@ const IncrementDecrementQuantity = ({ product }: { product: Product }) => {
   return (
     <div className="flex gap-5 items-center">
       {" "}
-      <button onClick={handleDecrement} className="text-">
+      <button onClick={handleDecrement}>
         <Minus className="" size={20} />
       </button>
       {productCount}
