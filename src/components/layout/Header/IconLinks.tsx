@@ -5,6 +5,8 @@ import SearchIcon from "@/components/atoms/SearchIcon";
 import SignIn from "@/components/atoms/SignIn";
 import { ClerkLoaded, SignedIn, UserButton, useUser } from "@clerk/nextjs";
 import React from "react";
+import Link from "next/link";
+import { Logs } from "lucide-react";
 
 const IconLinks = ({ isOpen }: { isOpen?: boolean }) => {
   const user = useUser();
@@ -20,6 +22,9 @@ const IconLinks = ({ isOpen }: { isOpen?: boolean }) => {
       <FavIcon />
       <ClerkLoaded>
         <SignedIn>
+          <Link href={"/orders"}>
+            <Logs className="hover:text-shop-orange hover-effect" />
+          </Link>
           <UserButton />
         </SignedIn>
         {!user.user && <SignIn />}
