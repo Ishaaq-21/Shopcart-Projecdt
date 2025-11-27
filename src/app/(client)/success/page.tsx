@@ -11,13 +11,12 @@ const SuccessPageContent = () => {
   const searchParams = useSearchParams();
   const orderNumber = searchParams.get("orderNumber");
   const { cartDispatch } = useCartContext();
-
+  const resetCart = () => {
+    cartDispatch({
+      type: "RESET_CART",
+    });
+  };
   useEffect(() => {
-    const resetCart = () => {
-      cartDispatch({
-        type: "RESET_CART",
-      });
-    };
     if (orderNumber) {
       resetCart();
     }
