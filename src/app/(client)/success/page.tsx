@@ -35,7 +35,7 @@ const SuccessPageContent = () => {
           transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           className="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
         >
-          <Check className="text-white w-10 h-10" />
+          <Check className="text-shop-primary w-10 h-10" />
         </motion.div>
 
         <h1 className="text-3xl font-bold text-gray-900 mb-4">
@@ -62,7 +62,7 @@ const SuccessPageContent = () => {
           </Link>
           <Link
             href="/orders"
-            className="flex items-center justify-center px-4 py-3 font-semibold bg-lightGreen text-black border border-lightGreen rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-md"
+            className="flex items-center justify-center px-4 py-3 font-semibold bg-lightGreen text-black border border-lightGreen bg-shop-primary rounded-lg hover:bg-gray-100 hover-effect shadow-md"
           >
             <Package className="w-5 h-5 mr-2" />
             Orders
