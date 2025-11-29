@@ -10,7 +10,20 @@ export type FavoriteAction =
 export const initialState: FavoriteState = {
   favorites: [],
 };
-
+export const getSavedWishList = (): FavoriteState => {
+  if (typeof window === "undefined") return initialState;
+  try {
+    const raw = localStorage.getItem("wishlistState");
+    if (!raw) return initialState;
+    const parsed = JSON.parse(raw) as Partial<FavoriteState>;
+    return {
+      ...initialState,
+      ...parsed,
+    };
+  } catch {
+    return initialState;
+  }
+};
 function favoriteClick(state: FavoriteState, product: Product) {
   const productExists = state.favorites.find(
     (item) => item._id === product._id

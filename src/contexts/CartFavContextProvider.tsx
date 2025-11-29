@@ -16,6 +16,7 @@ import { CartState } from "@/types/types";
 import favoriteReducer, {
   FavoriteAction,
   FavoriteState,
+  getSavedWishList,
   initialState,
 } from "./favorite/FavoriteReducer";
 
@@ -39,7 +40,8 @@ const CartReducerContextProvider = ({ children }: { children: ReactNode }) => {
   );
   const [favoriteState, favDispatch] = useReducer(
     favoriteReducer,
-    initialState
+    initialState,
+    getSavedWishList
   );
   useEffect(() => {
     try {
@@ -47,6 +49,12 @@ const CartReducerContextProvider = ({ children }: { children: ReactNode }) => {
       localStorage.setItem("cartState", JSON.stringify(stateToSave));
     } catch (error) {}
   }, [cartState]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("wishlistState", JSON.stringify(favoriteState));
+    } catch (error) {}
+  }, [favoriteState]);
   return (
     <CartContext.Provider value={{ cartState, cartDispatch }}>
       <FavoriteContext.Provider value={{ favoriteState, favDispatch }}>
