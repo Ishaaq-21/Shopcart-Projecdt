@@ -4,6 +4,7 @@ import {
   BRAND_QUERY,
   BRANDS_QUERY,
   DEAL_PRODUCTS,
+  GET_ALL_BLOG,
   LATEST_BLOG_QUERY,
   MY_ORDERS_QUERY,
   PRODUCT_BY_SLUG_QUERY,
@@ -112,6 +113,19 @@ const getMyOrders = async (userId: string) => {
   } catch (error) {
     console.error("Error fetching product by ID:", error);
     return null;
+  }
+};
+
+const getAllBlogs = async (quantity: number) => {
+  try {
+    const { data } = await sanityFetch({
+      query: GET_ALL_BLOG,
+      params: { quantity },
+    });
+    return data ?? [];
+  } catch (error) {
+    console.log("Error fetching all brands:", error);
+    return [];
   }
 };
 export {
