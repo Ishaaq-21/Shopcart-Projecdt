@@ -1,6 +1,5 @@
 "use client";
-import clsx from "clsx";
-import React, { useState } from "react";
+import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../tabs";
 
 export type Tab = {

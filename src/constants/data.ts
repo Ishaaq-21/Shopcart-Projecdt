@@ -1,9 +1,4 @@
-import {
-  Category,
-  CategoryLink,
-  HeaderMenuItemType,
-  QuickLink,
-} from "../types/types";
+import { CategoryLink, HeaderMenuItemType, QuickLink } from "../types/types";
 
 export const headerMenuData: HeaderMenuItemType[] = [
   {

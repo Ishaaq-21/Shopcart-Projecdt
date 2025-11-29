@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Facebook, Github, Linkedin, Slack, Youtube } from "lucide-react";
+import { Facebook, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip";
 
