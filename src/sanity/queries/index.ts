@@ -9,6 +9,7 @@ import {
   MY_ORDERS_QUERY,
   PRODUCT_BY_SLUG_QUERY,
   PRODUCTS_QUERY,
+  SINGLE_BLOG_QUERY,
 } from "./query";
 
 const getCategories = async (quantity?: number) => {
@@ -128,6 +129,19 @@ const getAllBlogs = async (quantity: number) => {
     return [];
   }
 };
+
+const getSingleBlog = async (slug: string) => {
+  try {
+    const { data } = await sanityFetch({
+      query: SINGLE_BLOG_QUERY,
+      params: { slug },
+    });
+    return data ?? [];
+  } catch (error) {
+    console.log("Error fetching all brands:", error);
+    return [];
+  }
+};
 export {
   getCategories,
   getAllBrands,
@@ -137,4 +151,6 @@ export {
   getBrand,
   getAllProducts,
   getMyOrders,
+  getAllBlogs,
+  getSingleBlog,
 };
