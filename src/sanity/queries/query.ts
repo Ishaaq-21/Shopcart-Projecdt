@@ -46,6 +46,18 @@ const GET_ALL_BLOG = defineQuery(
     }
   `
 );
+const SINGLE_BLOG_QUERY =
+  defineQuery(`*[_type == "blog" && slug.current == $slug][0]{
+  ..., 
+    author->{
+    name,
+    image,
+  },
+  blogcategories[]->{
+    title,
+    "slug": slug.current,
+  },
+}`);
 export {
   BRANDS_QUERY,
   LATEST_BLOG_QUERY,
@@ -55,4 +67,5 @@ export {
   PRODUCTS_QUERY,
   MY_ORDERS_QUERY,
   GET_ALL_BLOG,
+  SINGLE_BLOG_QUERY,
 };
