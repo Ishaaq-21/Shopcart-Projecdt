@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { FileX, Link } from "lucide-react";
+import { FileX } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const NoOrders = () => {
@@ -11,8 +12,13 @@ const NoOrders = () => {
         It looks like you haven&apos;t placed any orders yet. Start shopping to
         see your orders here!
       </p>
-      <Button asChild className="mt-6">
-        <Link href="/">Browse Products</Link>
+      <Button
+        asChild
+        className="mt-6 bg-shop-primary hover:bg-shop-orange hover-effect"
+      >
+        <Link className="font-semibold" href="/">
+          Browse Products
+        </Link>
       </Button>
     </div>
   );
