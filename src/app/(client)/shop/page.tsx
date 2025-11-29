@@ -1,6 +1,7 @@
 import Shop from "@/components/sections/shop/shop";
+import Loader from "@/components/ui/customUI/Loader";
 import { getAllBrands, getAllProducts, getCategories } from "@/sanity/queries";
-import React from "react";
+import React, { Suspense } from "react";
 
 const page = async () => {
   const [categories, brands, initialProducts] = await Promise.all([
@@ -10,11 +11,13 @@ const page = async () => {
   ]);
   return (
     <div className="shop-page pt-6">
-      <Shop
-        categories={categories}
-        brands={brands}
-        initialProducts={initialProducts}
-      />
+      <Suspense fallback={<Loader />}>
+        <Shop
+          categories={categories}
+          brands={brands}
+          initialProducts={initialProducts}
+        />
+      </Suspense>
     </div>
   );
 };
