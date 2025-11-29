@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Brand, Category, Product } from "../../../../sanity.types";
 import Container from "@/components/common/Container";
 import Title from "@/components/atoms/Title";
@@ -32,7 +32,7 @@ const Shop = ({ categories, brands, initialProducts }: ShopProps) => {
   const [selectedBrand, setSelectedBrand] = useState(brandParams || null);
   const [selectedPrice, setSelectedPrice] = useState<string | null>(null);
 
-  const fetchProducts = async () => {
+  const fetchProducts = useCallback(async () => {
     try {
       setProducts([]);
       setError(null);
@@ -77,10 +77,11 @@ const Shop = ({ categories, brands, initialProducts }: ShopProps) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedCategory, selectedBrand, selectedPrice, router, pathname]);
+
   useEffect(() => {
     fetchProducts();
-  }, [selectedBrand, selectedCategory, selectedPrice]);
+  }, [fetchProducts]);
   return (
     <Container>
       <div className="sticky flex justify-between items-center border-b border-shop-primary w-full pb-5">
