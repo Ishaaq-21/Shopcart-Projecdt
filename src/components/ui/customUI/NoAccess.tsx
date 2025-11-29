@@ -13,7 +13,7 @@ const NoAccess = ({ message }: { message: string }) => {
         Please sign in to view your {message}.
       </p>
       <SignIn className="flex justify-center items-center w-full border border-black py-1.5 rounded-md bg-shop-primary hover:bg-shop-orange hover-effect hover:!text-black" />
-      <p className="text-sm text-gray-500">Don't have an account ? </p>
+      <p className="text-sm text-gray-500">Don&apos;t have an account ? </p>
       <SignUpButton mode="modal">
         <button className="w-full h-full border border-black rounded-md py-1.5 hover:bg-gray-200 hover-effect">
           Create an account
