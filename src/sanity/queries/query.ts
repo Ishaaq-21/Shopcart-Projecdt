@@ -36,6 +36,16 @@ const MY_ORDERS_QUERY =
   ...,product->
 }
 }`);
+
+const GET_ALL_BLOG = defineQuery(
+  `*[_type == 'blog'] | order(publishedAt desc)[0...$quantity]{
+  ...,  
+     blogcategories[]->{
+    title
+}
+    }
+  `
+);
 export {
   BRANDS_QUERY,
   LATEST_BLOG_QUERY,
@@ -44,4 +54,5 @@ export {
   BRAND_QUERY,
   PRODUCTS_QUERY,
   MY_ORDERS_QUERY,
+  GET_ALL_BLOG,
 };
