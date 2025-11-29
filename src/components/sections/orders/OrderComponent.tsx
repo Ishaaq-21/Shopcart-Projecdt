@@ -46,7 +46,7 @@ const OrdersComponent = ({ orders }: { orders: MY_ORDERS_QUERYResult }) => {
                   </TableCell>
                   <TableCell>
                     <span className="text-black font-medium">
-                      {order?.totalPrice}
+                      $ {order?.totalPrice}
                     </span>
                   </TableCell>
                   <TableCell>

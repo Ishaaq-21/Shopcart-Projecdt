@@ -94,7 +94,7 @@ const OrderDetailDialog: React.FC<OrderDetailsDialogProps> = ({
                 <TableCell>{product?.quantity}</TableCell>
                 <TableCell>
                   <span className="text-black font-medium">
-                    {order?.totalPrice}
+                    $ {order?.totalPrice}
                   </span>
                 </TableCell>
               </TableRow>
@@ -115,6 +115,7 @@ const OrderDetailDialog: React.FC<OrderDetailsDialogProps> = ({
               <div className="w-full flex items-center justify-between">
                 <strong>Subtotal: </strong>
                 <span className="text-black font-bold">
+                  ${" "}
                   {(order?.totalPrice as number) +
                     (order?.amountDiscount as number)}
                 </span>
@@ -122,7 +123,9 @@ const OrderDetailDialog: React.FC<OrderDetailsDialogProps> = ({
             )}
             <div className="w-full flex items-center justify-between">
               <strong>Total: </strong>
-              <span className="text-black font-bold">{order?.totalPrice}</span>
+              <span className="text-black font-bold">
+                $ {order?.totalPrice}
+              </span>
             </div>
           </div>
         </div>
