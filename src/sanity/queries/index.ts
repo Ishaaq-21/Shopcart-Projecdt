@@ -1,12 +1,14 @@
 import next from "next";
 import { sanityFetch } from "../lib/live";
 import {
+  BLOG_CATEGORIES,
   BRAND_QUERY,
   BRANDS_QUERY,
   DEAL_PRODUCTS,
   GET_ALL_BLOG,
   LATEST_BLOG_QUERY,
   MY_ORDERS_QUERY,
+  OTHERS_BLOG_QUERY,
   PRODUCT_BY_SLUG_QUERY,
   PRODUCTS_QUERY,
   SINGLE_BLOG_QUERY,
@@ -142,6 +144,30 @@ const getSingleBlog = async (slug: string) => {
     return [];
   }
 };
+const getBlogCategories = async () => {
+  try {
+    const { data } = await sanityFetch({
+      query: BLOG_CATEGORIES,
+    });
+    return data ?? [];
+  } catch (error) {
+    console.log("Error fetching all brands:", error);
+    return [];
+  }
+};
+
+const getOthersBlog = async (slug: string, quantity: number) => {
+  try {
+    const { data } = await sanityFetch({
+      query: OTHERS_BLOG_QUERY,
+      params: { slug, quantity },
+    });
+    return data ?? [];
+  } catch (error) {
+    console.log("Error fetching all brands:", error);
+    return [];
+  }
+};
 export {
   getCategories,
   getAllBrands,
@@ -153,4 +179,6 @@ export {
   getMyOrders,
   getAllBlogs,
   getSingleBlog,
+  getBlogCategories,
+  getOthersBlog,
 };
