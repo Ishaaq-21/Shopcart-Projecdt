@@ -44,16 +44,12 @@ const CartReducerContextProvider = ({ children }: { children: ReactNode }) => {
     getSavedWishList
   );
   useEffect(() => {
-    try {
-      const { getItemCountById, ...stateToSave } = cartState;
-      localStorage.setItem("cartState", JSON.stringify(stateToSave));
-    } catch (error) {}
+    const { getItemCountById, ...stateToSave } = cartState;
+    localStorage.setItem("cartState", JSON.stringify(stateToSave));
   }, [cartState]);
 
   useEffect(() => {
-    try {
-      localStorage.setItem("wishlistState", JSON.stringify(favoriteState));
-    } catch (error) {}
+    localStorage.setItem("wishlistState", JSON.stringify(favoriteState));
   }, [favoriteState]);
   return (
     <CartContext.Provider value={{ cartState, cartDispatch }}>
